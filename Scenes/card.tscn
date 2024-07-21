@@ -1,56 +1,59 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2weeh3iabe3x"]
+[gd_scene load_steps=8 format=3 uid="uid://c2weeh3iabe3x"]
 
 [ext_resource type="Texture2D" uid="uid://dsu6gxuxcdgcs" path="res://Sprites/BaseCard.png" id="1_ivddc"]
+[ext_resource type="Script" path="res://Scripts/card.gd" id="1_vh5a6"]
 [ext_resource type="Texture2D" uid="uid://dkyg52ghhrt2s" path="res://Sprites/BaseCost.png" id="2_76p4v"]
 [ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="3_vokjs"]
 [ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="4_hjxft"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_shydi"]
+[sub_resource type="LabelSettings" id="LabelSettings_dn6af"]
 font = ExtResource("3_vokjs")
 font_size = 48
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.392157)
 shadow_offset = Vector2(2, 2)
 
-[sub_resource type="LabelSettings" id="LabelSettings_0abkm"]
+[sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
 font = ExtResource("3_vokjs")
 font_size = 48
 
 [node name="Card" type="Node2D"]
+script = ExtResource("1_vh5a6")
 
-[node name="BaseCard" type="Sprite2D" parent="."]
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_ivddc")
 
-[node name="BaseCost" type="Node2D" parent="."]
+[node name="CardCost" type="Node2D" parent="."]
+position = Vector2(223, -303)
 
-[node name="Sprite2D" type="Sprite2D" parent="BaseCost"]
-position = Vector2(220, -301)
+[node name="CardCostSprite" type="Sprite2D" parent="CardCost"]
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_76p4v")
 
-[node name="Label" type="Label" parent="BaseCost"]
-offset_left = 209.0
-offset_top = -321.0
-offset_right = 249.0
-offset_bottom = -282.0
+[node name="CardCostLabel" type="Label" parent="CardCost"]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
 text = "3"
-label_settings = SubResource("LabelSettings_shydi")
+label_settings = SubResource("LabelSettings_dn6af")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CardImage" type="Node2D" parent="."]
 position = Vector2(0, -100)
 
-[node name="Sprite2D" type="Sprite2D" parent="CardImage"]
+[node name="CardImageSprite" type="Sprite2D" parent="CardImage"]
 texture = ExtResource("4_hjxft")
 
 [node name="CardDescription" type="Node2D" parent="."]
-position = Vector2(0, 100)
+position = Vector2(-206, 60)
 
-[node name="Label" type="Label" parent="CardDescription"]
-offset_left = -105.0
-offset_top = 1.0
-offset_right = 105.0
-offset_bottom = 40.0
+[node name="CardDescriptionLabel" type="Label" parent="CardDescription"]
+offset_left = -4.0
+offset_right = 416.0
+offset_bottom = 230.0
 text = "Attack + 1"
-label_settings = SubResource("LabelSettings_0abkm")
+label_settings = SubResource("LabelSettings_r03sg")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3

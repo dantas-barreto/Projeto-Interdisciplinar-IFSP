@@ -1,3 +1,17 @@
-[gd_scene format=3 uid="uid://b38wveyi7a4c7"]
+[gd_scene load_steps=2 format=3 uid="uid://b38wveyi7a4c7"]
+
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/card.tscn" id="1_nnvwx"]
 
 [node name="Deck" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Card" parent="CanvasLayer" instance=ExtResource("1_nnvwx")]
+position = Vector2(469, 396)
+cardCost = 5
+cardDescription = "Destroy the Shadows"
+
+[node name="Card2" parent="CanvasLayer" instance=ExtResource("1_nnvwx")]
+position = Vector2(986, 396)
+cardCost = 2
+cardDescription = "Territory Card"
