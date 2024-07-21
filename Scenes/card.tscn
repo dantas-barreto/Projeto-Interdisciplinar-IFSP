@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2weeh3iabe3x"]
+[gd_scene load_steps=9 format=3 uid="uid://c2weeh3iabe3x"]
 
 [ext_resource type="Texture2D" uid="uid://dsu6gxuxcdgcs" path="res://Sprites/BaseCard.png" id="1_ivddc"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_vh5a6"]
@@ -11,6 +11,10 @@ font = ExtResource("3_vokjs")
 font_size = 48
 shadow_color = Color(0, 0, 0, 0.392157)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_581ge"]
+font = ExtResource("3_vokjs")
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
 font = ExtResource("3_vokjs")
@@ -45,13 +49,24 @@ position = Vector2(0, -100)
 [node name="CardImageSprite" type="Sprite2D" parent="CardImage"]
 texture = ExtResource("4_hjxft")
 
+[node name="CardName" type="Node2D" parent="."]
+position = Vector2(-210, 52)
+
+[node name="CardNameLabel" type="Label" parent="CardName"]
+offset_right = 420.0
+offset_bottom = 39.0
+text = "Godotinho"
+label_settings = SubResource("LabelSettings_581ge")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="CardDescription" type="Node2D" parent="."]
-position = Vector2(-206, 60)
+position = Vector2(-210, 100)
 
 [node name="CardDescriptionLabel" type="Label" parent="CardDescription"]
-offset_left = -4.0
-offset_right = 416.0
-offset_bottom = 230.0
+offset_right = 420.0
+offset_bottom = 190.0
 text = "Attack + 1"
 label_settings = SubResource("LabelSettings_r03sg")
 horizontal_alignment = 1
