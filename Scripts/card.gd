@@ -23,7 +23,6 @@ func setCardValues(_cost: int, _name: String, _description: String):
 	cardNameLabel.set_text(_name)
 	cardDescriptionLabel.set_text(_description)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
