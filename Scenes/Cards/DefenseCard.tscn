@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c00eowvehxoji"]
+
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_ys3u3"]
+[ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="2_phves"]
+
+[node name="DefenseCard" type="Node2D"]
+
+[node name="Card" parent="." node_paths=PackedStringArray("cardImage") instance=ExtResource("1_ys3u3")]
+cardName = "Hardshell Godot"
+cardDescription = "Defense +1"
+cardImage = NodePath("../CardSprite")
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
+texture = ExtResource("2_phves")
