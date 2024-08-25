@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/hand.gd" id="1_odppp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bc4cf"]
+radius = 100.0
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_odppp")
