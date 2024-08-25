@@ -9,10 +9,8 @@ class_name Card extends Node2D
 @onready var cardNameLabel: Label = $CardName/CardNameLabel
 @onready var cardDescriptionLabel: Label = $CardDescription/CardDescriptionLabel
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	setCardValues(cardCost, cardName, cardDescription)
-	visible = false
 
 func setCardValues(_cost: int, _name: String, _description: String):
 	cardCost = _cost
@@ -23,6 +21,8 @@ func setCardValues(_cost: int, _name: String, _description: String):
 	cardNameLabel.set_text(_name)
 	cardDescriptionLabel.set_text(_description)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func activate():
+	pass
+
 func _process(delta):
 	pass
