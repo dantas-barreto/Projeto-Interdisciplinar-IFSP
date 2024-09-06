@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://rtp8o83qyvjn"]
+[gd_scene load_steps=4 format=3 uid="uid://rtp8o83qyvjn"]
 
-[ext_resource type="Script" path="res://Scenes/hand.gd" id="1_odppp"]
+[ext_resource type="Script" path="res://Scripts/hand.gd" id="1_odppp"]
+[ext_resource type="PackedScene" uid="uid://fjugyi7q24yw" path="res://Scenes/Cards/AttackCard.tscn" id="2_2ed5h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bc4cf"]
 radius = 100.0
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_odppp")
+hand_radius = null
+card_angle = null
+angle_limit = null
+max_spread = null
+
+[node name="TestCard" parent="." instance=ExtResource("2_2ed5h")]
+visible = false
+position = Vector2(70.7107, -70.7107)
+rotation = 0.785398
+scale = Vector2(0.1, 0.1)
 
 [node name="DebugShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bc4cf")

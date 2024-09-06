@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c00eowvehxoji"]
 
-[ext_resource type="Script" path="res://Scenes/Cards/defense_card.gd" id="1_i3u76"]
+[ext_resource type="Script" path="res://Scripts/defense_card.gd" id="1_i3u76"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_ys3u3"]
 [ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="2_phves"]
 
