@@ -13,19 +13,23 @@ var hand: Array = []
 
 func add_card(card: Node2D):
 	hand.push_back(card)
+	add_child(card)
+	reposition_cards()
 	
 
 func reposition_cards():
-	var min_spread = min(angle_limit / hand.size(), max_spread)
+	var card_spread = min(angle_limit / hand.size(), max_spread)
+	var current_angle = -(card_spread * hand.size() - 1) / 2 - 90
 	for card in hand:
-		pass
+		_update_card_transform(card, current_angle)
+		current_angle += card_spread
 
 func get_card_position(angle_in_deg: float) -> Vector2:
 	var x: float = hand_radius * cos(deg_to_rad(angle_in_deg))
 	var y: float = hand_radius * sin(deg_to_rad(angle_in_deg))
 	return Vector2(x, y)
 
-func _card_transform_update(card: Node2D, angle: float):
+func _update_card_transform(card: Node2D, card_angle: float):
 	card.set_position(get_card_position(card_angle))
 	card.set_rotation(deg_to_rad(card_angle + 90))
 
@@ -36,4 +40,4 @@ func _process(delta: float) -> void:
 	# tool logic
 	if (collision_shape.shape as CircleShape2D).radius != hand_radius:
 		(collision_shape.shape as CircleShape2D).set_radius(hand_radius)
-	_card_transform_update(test_card, hand_radius )
+	_update_card_transform(test_card, hand_radius )

@@ -2,7 +2,8 @@ extends Node2D
 
 @onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/AttackCard.tscn")
 @onready var defenseCardScene: PackedScene = preload("res://Scenes/Cards/DefenseCard.tscn")
-@onready var spawnPoint = $CanvasLayer/Spawn
+
+@onready var hand: Hand = $CanvasLayer/Hand
 
 func _ready():
 	pass
@@ -12,8 +13,8 @@ func _process(delta):
 
 func _on_button_pressed():
 	var attackCard = attackCardScene.instantiate()
-	spawnPoint.add_child(attackCard)
+	hand.add_card(attackCard)
 
 func _on_button_2_pressed():
 	var defenseCard = defenseCardScene.instantiate()
-	spawnPoint.add_child(defenseCard)
+	hand.add_card(defenseCard)

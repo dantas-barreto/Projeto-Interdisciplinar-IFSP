@@ -32,5 +32,5 @@ func _update_graphics():
 func activate():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	_update_graphics()

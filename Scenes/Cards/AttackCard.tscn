@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fjugyi7q24yw"]
 
-[ext_resource type="Script" path="res://Scripts/attack_card.gd" id="1_oh5e2"]
+[ext_resource type="Script" path="res://Scripts/Cards/attack_card.gd" id="1_oh5e2"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_upxq8"]
 [ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="2_6h1ad"]
 
@@ -13,5 +13,6 @@ cardDescription = "Attack +1"
 cardImage = NodePath("../CardSprite")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -100)
+position = Vector2(0, -30)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_6h1ad")

@@ -21,6 +21,7 @@ font = ExtResource("3_vokjs")
 font_size = 48
 
 [node name="Card" type="Node2D"]
+scale = Vector2(0.3, 0.3)
 script = ExtResource("1_vh5a6")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
@@ -38,7 +39,7 @@ offset_left = -20.0
 offset_top = -20.0
 offset_right = 21.0
 offset_bottom = 20.0
-text = "3"
+text = "1"
 label_settings = SubResource("LabelSettings_dn6af")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -55,7 +56,7 @@ position = Vector2(-210, 52)
 [node name="CardNameLabel" type="Label" parent="CardName"]
 offset_right = 420.0
 offset_bottom = 39.0
-text = "Godotinho"
+text = "Card Name"
 label_settings = SubResource("LabelSettings_581ge")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -67,7 +68,7 @@ position = Vector2(-210, 100)
 [node name="CardDescriptionLabel" type="Label" parent="CardDescription"]
 offset_right = 420.0
 offset_bottom = 190.0
-text = "Attack + 1"
+text = "Card Description"
 label_settings = SubResource("LabelSettings_r03sg")
 horizontal_alignment = 1
 vertical_alignment = 1
