@@ -34,3 +34,15 @@ func activate():
 
 func _process(_delta):
 	_update_graphics()
+
+
+func _on_area_2d_mouse_entered() -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_mouse_exited() -> void:
+	pass # Replace with function body.
+
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	pass # Replace with function body.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2weeh3iabe3x"]
+[gd_scene load_steps=10 format=3 uid="uid://c2weeh3iabe3x"]
 
 [ext_resource type="Texture2D" uid="uid://dsu6gxuxcdgcs" path="res://Sprites/BaseCard.png" id="1_ivddc"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_vh5a6"]
@@ -19,6 +19,9 @@ font_size = 48
 [sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
 font = ExtResource("3_vokjs")
 font_size = 48
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6ho"]
+size = Vector2(485, 640)
 
 [node name="Card" type="Node2D"]
 scale = Vector2(0.4, 0.4)
@@ -73,3 +76,13 @@ label_settings = SubResource("LabelSettings_r03sg")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ke6ho")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
