@@ -1,48 +1,54 @@
 @tool
 class_name Card extends Node2D
 
-@export var cardCost: int = 1
-@export var cardName: String = "Card Name"
-@export var cardDescription: String = "Card Description"
-@export var cardImage: Sprite2D
+signal mouse_entered(card: Card)
+signal mouse_exited(card: Card)
 
-@onready var cardCostLabel: Label = $CardCost/CardCostLabel
-@onready var cardNameLabel: Label = $CardName/CardNameLabel
-@onready var cardDescriptionLabel: Label = $CardDescription/CardDescriptionLabel
+@export var card_name: String = "Card Name"
+@export var card_description: String = "Card Description"
+@export var card_cost: int = 1
+@export var card_image: Sprite2D
+
+@onready var cost_lbl: Label = $CardCost/CardCostLabel
+@onready var name_lbl: Label = $CardName/CardNameLabel
+@onready var description_lbl: Label = $CardDescription/CardDescriptionLabel 
+@onready var base_sprite: Sprite2D = $BaseCardSprite
 
 func _ready():
-	setCardValues(cardCost, cardName, cardDescription)
-
-func setCardValues(_cost: int, _name: String, _description: String):
-	cardCost = _cost
-	cardName = _name
-	cardDescription = _description
+	set_card_values(card_cost, card_name, card_description)
 	
+func set_card_values(_cost: int, _name: String, _description: String):
+	card_name = _name
+	card_description = _description
+	card_cost = _cost
 	_update_graphics()
 
-
 func _update_graphics():
-	if cardCostLabel.get_text() != str(cardCost):
-		cardCostLabel.set_text(str(cardCost))
-	if cardNameLabel.get_text() != str(cardName):
-		cardNameLabel.set_text(cardName)
-	if cardDescriptionLabel.get_text() != str(cardDescription):
-		cardDescriptionLabel.set_text(cardDescription)
+	if cost_lbl.get_text() != str(card_cost):
+		cost_lbl.set_text(str(card_cost))
+	if name_lbl.get_text() != card_name:
+		name_lbl.set_text(card_name)
+	if description_lbl.get_text() != card_description:
+		description_lbl.set_text(card_description)
+
+func highlight():
+	base_sprite.set_modulate(Color(1, 0.5, 0.1, 1))
+
+func unhighlight():
+	base_sprite.set_modulate(Color(1,1,1,1))
 
 func activate():
 	pass
 
-func _process(_delta):
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
 	_update_graphics()
 
+func _on_area_2d_mouse_entered():
+	mouse_entered.emit(self)
 
-func _on_area_2d_mouse_entered() -> void:
-	pass # Replace with function body.
+func _on_area_2d_mouse_exited():
+	mouse_exited.emit(self)
 
-
-func _on_area_2d_mouse_exited() -> void:
-	pass # Replace with function body.
-
-
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(viewport, event, shape_idx):
 	pass # Replace with function body.

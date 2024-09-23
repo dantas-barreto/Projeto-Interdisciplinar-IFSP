@@ -78,9 +78,9 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="Area2D" type="Area2D" parent="."]
+modulate = Color(1, 0.5875, 0.25, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ke6ho")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
