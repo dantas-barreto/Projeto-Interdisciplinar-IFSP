@@ -10,6 +10,7 @@ script = ExtResource("1_on1vr")
 
 [node name="Hand" parent="CanvasLayer" instance=ExtResource("2_upw7c")]
 position = Vector2(320, 1200)
+max_card_spread_angle = 7.5
 
 [node name="Button" type="Button" parent="."]
 offset_right = 113.0
