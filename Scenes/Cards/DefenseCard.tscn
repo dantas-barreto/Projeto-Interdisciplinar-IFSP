@@ -7,10 +7,11 @@
 [node name="DefenseCard" type="Node2D"]
 script = ExtResource("1_i3u76")
 
-[node name="Card" parent="." instance=ExtResource("1_ys3u3")]
-card_name = "Card Name"
-card_description = "Card Description"
-card_cost = 1
+[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("1_ys3u3")]
+card_name = "Hardshell Godot"
+card_description = "Defense +1"
+card_cost = 2
+card_image = NodePath("../CardSprite")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -40)
