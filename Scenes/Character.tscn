@@ -1,27 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://fic5xepe6wyd"]
+[gd_scene load_steps=3 format=3 uid="uid://fic5xepe6wyd"]
 
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_q7xjl"]
 [ext_resource type="Texture2D" uid="uid://dkyg52ghhrt2s" path="res://Sprites/BaseCost.png" id="2_b2303"]
-[ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="3_lcbg7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_p52u1"]
-font = ExtResource("3_lcbg7")
-font_size = 20
 
 [node name="PlayerCharacter" type="Node2D"]
-position = Vector2(100, 170)
 script = ExtResource("1_q7xjl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b2303")
 
 [node name="HealthLabel" type="Label" parent="Sprite2D"]
-offset_left = -20.0
-offset_top = -11.0
-offset_right = 20.0
-offset_bottom = 12.0
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
 size_flags_horizontal = 4
-text = "100"
-label_settings = SubResource("LabelSettings_p52u1")
+text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1

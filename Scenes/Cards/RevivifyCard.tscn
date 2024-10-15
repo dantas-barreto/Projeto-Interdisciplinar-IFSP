@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://c00eowvehxoji"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_erpos"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_poy5a"]
+[ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="3_ser78"]
+[ext_resource type="Script" path="res://Scripts/Cards/revivify_action.gd" id="4_hxpj3"]
+
+[node name="RevivifyCard" type="Node2D" node_paths=PackedStringArray("action")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_erpos")
+action = NodePath("RevivifyAction")
+
+[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("2_poy5a")]
+card_name = "Revivify Godot"
+card_description = "Health +2"
+card_image = NodePath("../CardSprite")
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_ser78")
+
+[node name="RevivifyAction" type="Node2D" parent="."]
+script = ExtResource("4_hxpj3")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

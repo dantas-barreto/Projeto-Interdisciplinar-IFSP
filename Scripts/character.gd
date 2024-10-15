@@ -13,11 +13,11 @@ func update_health_value():
 	if health_label.get_text() != str(health):
 		health_label.set_text(str(health))
 
-func spend_health(amount: int):
+func remove_health(amount: int):
 	health -= amount
 
-func take_damage(amount: int):
-	health -= amount
+func add_health(amount: int):
+	health += amount
 
 func _ready() -> void:
 	set_health_value(health)
