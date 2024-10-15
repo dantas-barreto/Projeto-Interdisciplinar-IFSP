@@ -1,10 +1,12 @@
 @tool
 class_name Hand extends Node2D
 
+signal card_activated(card: UsableCard)
+
 @export var hand_radius: int = 1000
 @export var card_angle: float = -90
 @export var angle_limit: float = 25
-@export var max_card_spread_angle: float = 5
+@export var max_card_spread_angle: float = 2.5
 
 @onready var test_card = $TestCard
 @onready var collision_shape: CollisionShape2D = $DebugShape
@@ -51,16 +53,15 @@ func _handle_card_touched(card):
 func _handle_card_untouched(card):
 	touched.remove_at(touched.find(card))
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _input(event):
 	if event.is_action_pressed("mouse_click_left") && current_selected_card_index >= 0:
 		var card = remove_card(current_selected_card_index)
+		card_activated.emit(card)
 		current_selected_card_index = -1
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	for card in hand:
 		current_selected_card_index = -1
@@ -82,4 +83,3 @@ func _process(delta):
 		
 	test_card.set_position(get_card_position(card_angle))
 	test_card.set_rotation(deg_to_rad(card_angle + 90))
-	

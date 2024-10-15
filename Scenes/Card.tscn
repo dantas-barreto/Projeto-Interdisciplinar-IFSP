@@ -24,7 +24,6 @@ font_size = 48
 size = Vector2(485, 640)
 
 [node name="Card" type="Node2D"]
-scale = Vector2(0.4, 0.4)
 script = ExtResource("1_vh5a6")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]

@@ -1,9 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4kxd1afo5m68"]
+[gd_scene load_steps=4 format=3 uid="uid://b4kxd1afo5m68"]
 
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_1kloo"]
+[ext_resource type="PackedScene" uid="uid://fic5xepe6wyd" path="res://Scenes/Character.tscn" id="1_fwshs"]
 [ext_resource type="PackedScene" uid="uid://b38wveyi7a4c7" path="res://Scenes/DeckInHand.tscn" id="1_v0gtk"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_1kloo")
 
 [node name="MainScreen" type="Node2D" parent="."]
 
+[node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
+position = Vector2(100, 300)
+scale = Vector2(2, 2)
+
+[node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
+position = Vector2(1100, 300)
+scale = Vector2(2, 2)
+
 [node name="DeckInHand" parent="." instance=ExtResource("1_v0gtk")]
+
+[connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]

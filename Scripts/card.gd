@@ -40,7 +40,6 @@ func unhighlight():
 func activate():
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_update_graphics()
 
@@ -51,4 +50,4 @@ func _on_area_2d_mouse_exited():
 	mouse_exited.emit(self)
 
 func _on_area_2d_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
+	pass
