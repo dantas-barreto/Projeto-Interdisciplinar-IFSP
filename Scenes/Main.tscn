@@ -12,16 +12,16 @@ player_character = NodePath("MainScreen/PlayerCharacter")
 [node name="MainScreen" type="Node2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="MainScreen"]
-position = Vector2(608, 608)
+position = Vector2(608, 454)
 scale = Vector2(9.5, 9.5)
 texture = ExtResource("3_apvvb")
 
 [node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(100, 300)
+position = Vector2(200, 800)
 scale = Vector2(2, 2)
 
 [node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(1100, 300)
+position = Vector2(1000, 100)
 scale = Vector2(2, 2)
 
 [node name="DeckInHand" parent="." instance=ExtResource("1_v0gtk")]

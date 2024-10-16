@@ -29,8 +29,10 @@ func spend_health(amount: int):
 	health -= amount
 
 func take_damage(amount: int):
-	var damage = max(amount - armor, 0)
-	armor = armor - amount
+	var damage = 0
+	damage = max(amount - armor, 0)
+	if armor > 0:
+		armor = armor - amount
 	health -= damage
 
 func add_health(amount: int):
