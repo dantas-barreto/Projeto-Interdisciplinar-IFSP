@@ -15,7 +15,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 	})
 
 func _on_inflict_1_damage_pressed() -> void:
-	player_character.remove_health(1)
+	player_character.take_damage(1)
 
 func _on_inflict_3_damage_pressed() -> void:
-	player_character.remove_health(3)
+	player_character.take_damage(3)

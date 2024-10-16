@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4kxd1afo5m68"]
+[gd_scene load_steps=5 format=3 uid="uid://b4kxd1afo5m68"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_1kloo"]
 [ext_resource type="PackedScene" uid="uid://fic5xepe6wyd" path="res://Scenes/Character.tscn" id="1_fwshs"]
 [ext_resource type="PackedScene" uid="uid://b38wveyi7a4c7" path="res://Scenes/DeckInHand.tscn" id="1_v0gtk"]
+[ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="3_apvvb"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player_character")]
 script = ExtResource("1_1kloo")
 player_character = NodePath("MainScreen/PlayerCharacter")
 
 [node name="MainScreen" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="MainScreen"]
+position = Vector2(608, 608)
+scale = Vector2(9.5, 9.5)
+texture = ExtResource("3_apvvb")
 
 [node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
 position = Vector2(100, 300)
