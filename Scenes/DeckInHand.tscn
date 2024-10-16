@@ -11,20 +11,29 @@ position = Vector2(600, 1900)
 hand_radius = 1100
 max_card_spread_angle = 7.5
 
-[node name="Button" type="Button" parent="."]
+[node name="Attack" type="Button" parent="."]
 offset_left = 2.0
 offset_right = 142.0
 offset_bottom = 35.0
 text = "add Attack Card"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Revivify" type="Button" parent="."]
 offset_left = 2.0
 offset_top = 40.0
 offset_right = 142.0
 offset_bottom = 75.0
+text = "add Revivify Card
+"
+
+[node name="Defend" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 80.0
+offset_right = 144.0
+offset_bottom = 115.0
 text = "add Defend Card
 "
 
 [connection signal="card_activated" from="Hand" to="." method="_on_hand_card_activated"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="Revivify" to="." method="_on_revivify_pressed"]
+[connection signal="pressed" from="Defend" to="." method="_on_defend_pressed"]

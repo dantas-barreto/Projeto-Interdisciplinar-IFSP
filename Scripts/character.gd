@@ -2,6 +2,7 @@
 class_name Character extends Node2D
 
 @export var health: int = 20
+@export var armor: int = 0
 
 @onready var health_label: Label = $Sprite2D/HealthLabel
 
@@ -13,6 +14,8 @@ func update_health_value():
 	if health_label.get_text() != str(health):
 		health_label.set_text(str(health))
 
+func add_armor(amount: int):
+	armor += armor
 func remove_health(amount: int):
 	health -= amount
 

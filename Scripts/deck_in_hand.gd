@@ -4,6 +4,7 @@ signal card_activated(card: UsableCard)
 
 @onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/AttackCard.tscn")
 @onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/RevivifyCard.tscn")
+@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/DefendCard.tscn")
 
 @onready var hand: Hand = $Hand
 
@@ -13,13 +14,17 @@ func _ready():
 func _process(delta):
 	pass
 
-func _on_button_pressed():
+func _on_attack_pressed():
 	var attackCard = attackCardScene.instantiate()
 	hand.add_card(attackCard)
 
-func _on_button_2_pressed():
+func _on_revivify_pressed():
 	var revivifyCard = revivifyCardScene.instantiate()
 	hand.add_card(revivifyCard)
+
+func _on_defend_pressed() -> void:
+	var defendCard = defendCardScene.instantiate()
+	hand.add_card(defendCard)
 
 func _on_hand_card_activated(card: UsableCard) -> void:
 	card_activated.emit(card)

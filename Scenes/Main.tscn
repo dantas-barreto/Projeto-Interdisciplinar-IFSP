@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://fic5xepe6wyd" path="res://Scenes/Character.tscn" id="1_fwshs"]
 [ext_resource type="PackedScene" uid="uid://b38wveyi7a4c7" path="res://Scenes/DeckInHand.tscn" id="1_v0gtk"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player_character")]
 script = ExtResource("1_1kloo")
+player_character = NodePath("MainScreen/PlayerCharacter")
 
 [node name="MainScreen" type="Node2D" parent="."]
 
@@ -19,4 +20,20 @@ scale = Vector2(2, 2)
 
 [node name="DeckInHand" parent="." instance=ExtResource("1_v0gtk")]
 
+[node name="Inflict1Damage" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 120.0
+offset_right = 142.0
+offset_bottom = 155.0
+text = "inflict 1 dmg"
+
+[node name="Inflict3Damage" type="Button" parent="."]
+offset_left = 2.0
+offset_top = 160.0
+offset_right = 142.0
+offset_bottom = 195.0
+text = "inflict 3 dmg"
+
 [connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
+[connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
+[connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://rbbhv2a3h3dj"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_jew8j"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_ys3u3"]
+[ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="2_phves"]
+[ext_resource type="Script" path="res://Scripts/Cards/defend_action.gd" id="4_e3cit"]
+
+[node name="AttackCard" type="Node2D" node_paths=PackedStringArray("action")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_jew8j")
+action = NodePath("DefendAction")
+
+[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("1_ys3u3")]
+card_name = "HardShell Godot"
+card_description = "Defend 1"
+card_image = NodePath("../CardSprite")
+
+[node name="CardSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_phves")
+
+[node name="DefendAction" type="Node2D" parent="."]
+script = ExtResource("4_e3cit")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]
