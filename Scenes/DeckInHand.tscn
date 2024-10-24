@@ -7,7 +7,7 @@
 script = ExtResource("1_on1vr")
 
 [node name="Hand" parent="." instance=ExtResource("2_upw7c")]
-position = Vector2(600, 1900)
+position = Vector2(800, 1900)
 hand_radius = 1100
 max_card_spread_angle = 7.5
 

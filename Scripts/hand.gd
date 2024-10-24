@@ -40,9 +40,8 @@ func reposition_cards():
 func get_card_position(angle_in_deg: float) -> Vector2:
 	var x: float = hand_radius * cos(deg_to_rad(angle_in_deg))
 	var y: float = hand_radius * sin(deg_to_rad(angle_in_deg))
-	
 	return Vector2(int(x), int(y))
-	
+
 func _update_card_transform(card: Node2D, angle_in_drag: float):
 	card.set_position(get_card_position(angle_in_drag))
 	card.set_rotation(deg_to_rad(angle_in_drag + 90))
