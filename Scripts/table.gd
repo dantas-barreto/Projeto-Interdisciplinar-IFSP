@@ -33,14 +33,14 @@ func remove_card(index: int):
 
 func reposition_cards():
 	var card_spread = min(spread_limit / table.size(), max_card_spread)
-	var current_spread = 750 - (card_spread * (table.size() - 1)) / 2
+	var current_spread = (table_size_x / 2) - (card_spread * (table.size() - 1)) / 2
 	for card in table :
 		_update_card_transform(card, current_spread)
 		current_spread += card_spread
 
 func get_card_position(spread: int) -> Vector2:
 	# tenho que resolver essa bosta
-	var x: int = table_size_x 
+	var x: int = spread 
 	var y: int = table_size_y / 2
 	return Vector2(x, y)
 
