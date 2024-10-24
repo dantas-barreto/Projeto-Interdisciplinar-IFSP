@@ -29,6 +29,16 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 		"caster": $MainScreen/PlayerCharacter,
 		"targets": [$MainScreen/EnemyCharacter]
 	})
+	# if GameController.GameState.PLAYER_TURN:
+	#	 card.activate({
+	#	 "caster": $MainScreen/PlayerCharacter,
+	#	 "targets": $MainScreen/EnemyCharacter
+	# })
+	# if GameController.GameState.ENEMY_TURN:
+	#	 card.activate({
+	#	 "caster": $MainScreen/EnemyCharacter,
+	#	 "targets": $MainScreen/PlayerCharacter
+	# })
 
 func _on_inflict_1_damage_pressed() -> void:
 	player_character.take_damage(1)

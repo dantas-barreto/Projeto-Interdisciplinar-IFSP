@@ -39,7 +39,6 @@ func reposition_cards():
 		current_spread += card_spread
 
 func get_card_position(spread: int) -> Vector2:
-	# tenho que resolver essa bosta
 	var x: int = spread 
 	var y: int = table_size_y / 2
 	return Vector2(x, y)
