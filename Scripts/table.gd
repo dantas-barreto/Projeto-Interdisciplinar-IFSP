@@ -9,7 +9,7 @@ signal card_activated(card: UsableCard)
 @export var max_card_spread: int = 50
 
 
-@onready var test_card: Card = $PlayerSide/TestCard
+@onready var test_card = $TestCard
 @onready var collision_shape: CollisionShape2D = $DebugShape
 
 var table: Array = []

@@ -3,6 +3,7 @@ extends Node2D
 @export var player_character: Character
 
 @onready var game_control:GameController = $GameController
+@onready var deck_in_hand: Node2D = $DeckInHand
 
 var enemy_state: int = 0
 
@@ -24,21 +25,17 @@ func _process(delta: float) -> void:
 		enemy_state += posmod(enemy_state + 1, 3)
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 
-func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
-	card.activate({
+func _on_table_card_activated(card: UsableCard) -> void:
+	if game_control.current_state == GameController.GameState.PLAYER_TURN:
+		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
-		"targets": [$MainScreen/EnemyCharacter]
+		"targets": $MainScreen/EnemyCharacter
 	})
-	# if GameController.GameState.PLAYER_TURN:
-	#	 card.activate({
-	#	 "caster": $MainScreen/PlayerCharacter,
-	#	 "targets": $MainScreen/EnemyCharacter
-	# })
-	# if GameController.GameState.ENEMY_TURN:
-	#	 card.activate({
-	#	 "caster": $MainScreen/EnemyCharacter,
-	#	 "targets": $MainScreen/PlayerCharacter
-	# })
+	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
+		card.activate({
+		"caster": $MainScreen/EnemyCharacter,
+		"targets": $MainScreen/PlayerCharacter
+	})
 
 func _on_inflict_1_damage_pressed() -> void:
 	player_character.take_damage(1)
