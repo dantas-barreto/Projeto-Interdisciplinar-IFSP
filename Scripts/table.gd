@@ -6,7 +6,7 @@ signal card_activated(card: UsableCard)
 @export var table_size_x: int = 1500
 @export var table_size_y: int = 250
 @export var spread_limit: int = 1300
-@export var max_card_spread: int = 50
+@export var max_card_spread: int = 300
 
 
 @onready var test_card = $TestCard
@@ -32,15 +32,15 @@ func remove_card(index: int):
 	return removing_card
 
 func reposition_cards():
-	var card_spread = min(spread_limit / table.size(), max_card_spread)
-	var current_spread = (table_size_x / 2) - (card_spread * (table.size() - 1)) / 2
+	var card_spread = min((spread_limit / table.size()), 300)
+	var current_spread = + (card_spread * (table.size() - 1))
 	for card in table :
 		_update_card_transform(card, current_spread)
 		current_spread += card_spread
 
 func get_card_position(spread: int) -> Vector2:
-	var x: int = spread 
-	var y: int = table_size_y / 2
+	var x: int = (table_size_x / 2) - spread
+	var y: int = table_size_y / 3
 	return Vector2(x, y)
 
 func _update_card_transform(card: Node2D, card_position: float):

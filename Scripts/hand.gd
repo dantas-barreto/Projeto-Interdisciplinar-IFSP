@@ -58,7 +58,8 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("mouse_click_left") && current_selected_card_index >= 0:
 		if current_selected_card_index >= 0 and current_selected_card_index < hand.size():
-			var card = remove_card(current_selected_card_index)
+			hand[current_selected_card_index].set_rotation(deg_to_rad(0))
+			var card = hand[current_selected_card_index]
 			card_activated.emit(card)
 			current_selected_card_index = -1
 
