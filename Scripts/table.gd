@@ -32,15 +32,19 @@ func remove_card(index: int):
 	return removing_card
 
 func reposition_cards():
-	var card_spread = min((spread_limit / table.size()), 300)
-	var current_spread = + (card_spread * (table.size() - 1))
+	var card_spread =  min(300, spread_limit / table.size())
+	var current_spread = 0
+	if table.size() == 1:
+		current_spread = 0;
+	else:
+		current_spread = - (card_spread / 2 * (table.size()-1))
 	for card in table :
 		_update_card_transform(card, current_spread)
 		current_spread += card_spread
 
 func get_card_position(spread: int) -> Vector2:
-	var x: int = (table_size_x / 2) - spread
-	var y: int = table_size_y / 3
+	var x: int = spread
+	var y: int = 0
 	return Vector2(x, y)
 
 func _update_card_transform(card: Node2D, card_position: float):
