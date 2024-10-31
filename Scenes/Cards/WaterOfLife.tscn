@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://bqkvsxl20eh3p"]
+[gd_scene load_steps=2 format=3 uid="uid://bqkvsxl20eh3p"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/water_of_life.gd" id="1_km5ba"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_km5ba")
