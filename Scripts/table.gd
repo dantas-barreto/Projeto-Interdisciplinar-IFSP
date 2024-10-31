@@ -8,7 +8,6 @@ signal card_activated(card: UsableCard)
 @export var spread_limit: int = 1300
 @export var max_card_spread: int = 300
 
-
 @onready var test_card = $TestCard
 @onready var collision_shape: CollisionShape2D = $DebugShape
 
@@ -63,7 +62,6 @@ func _input(event):
 	if event.is_action_pressed("mouse_click_left") && current_selected_card_index >= 0:
 		var card = table[current_selected_card_index]
 		card_activated.emit(card)
-		current_selected_card_index = -1
 
 func _process(delta):
 	for card in table:
@@ -79,4 +77,3 @@ func _process(delta):
 		if highest_touched_index >= 0 && highest_touched_index < table.size():
 			table[highest_touched_index].highlight()
 			current_selected_card_index = highest_touched_index
-			

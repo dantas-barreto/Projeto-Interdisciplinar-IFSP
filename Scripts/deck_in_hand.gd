@@ -27,6 +27,9 @@ func _on_defend_pressed() -> void:
 	var defendCard = defendCardScene.instantiate()
 	hand.add_card(defendCard)
 
-func _on_hand_card_activated(card: UsableCard) -> void:
+func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
 	hand.remove_card(hand.current_selected_card_index)
 	table.add_card(card)
+
+func _on_table_card_activated(card: UsableCard) -> void:
+	card_activated.emit(card)

@@ -1,7 +1,7 @@
 @tool
 class_name Hand extends Node2D
 
-signal card_activated(card: UsableCard)
+signal card_transfer_to_table(card: UsableCard)
 
 @export var hand_radius: int = 1000
 @export var card_angle: float = -90
@@ -25,7 +25,6 @@ func add_card(card: Node2D):
 func remove_card(index: int) -> Node2D:
 	var removing_card = hand[index]
 	hand.remove_at(index)
-	touched.remove_at(touched.find(removing_card))
 	remove_child(removing_card)
 	reposition_cards()
 	return removing_card
@@ -60,7 +59,7 @@ func _input(event):
 		if current_selected_card_index >= 0 and current_selected_card_index < hand.size():
 			hand[current_selected_card_index].set_rotation(deg_to_rad(0))
 			var card = hand[current_selected_card_index]
-			card_activated.emit(card)
+			card_transfer_to_table.emit(card)
 			current_selected_card_index = -1
 
 func _process(delta):
