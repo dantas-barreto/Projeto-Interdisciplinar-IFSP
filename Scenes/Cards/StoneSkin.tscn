@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6l7tnvxjd8hm"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/stone_skin.gd" id="1_73ifx"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_73ifx")

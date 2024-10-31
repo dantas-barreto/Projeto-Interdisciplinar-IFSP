@@ -53,7 +53,8 @@ func _handle_card_touched(card):
 	touched.push_back(card)
 
 func _handle_card_untouched(card):
-	touched.remove_at(touched.find(card))
+	if(current_selected_card_index != -1):
+		touched.remove_at(touched.find(card))
 
 func _ready() -> void:
 	pass
