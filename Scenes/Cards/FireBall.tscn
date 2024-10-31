@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://36m42xks2nki"]
+[gd_scene load_steps=2 format=3 uid="uid://36m42xks2nki"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/fire_ball.gd" id="1_18pec"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_18pec")

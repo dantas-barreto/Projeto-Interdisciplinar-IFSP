@@ -61,9 +61,22 @@ func _ready() -> void:
 
 func _input(event):
 	if event.is_action_pressed("mouse_click_left") && current_selected_card_index >= 0:
-		var card = remove_card(current_selected_card_index)
+		var card = table[current_selected_card_index]
 		card_activated.emit(card)
 		current_selected_card_index = -1
 
-func _process(delta: float) -> void:
-	pass
+func _process(delta):
+	for card in table:
+		current_selected_card_index = -1
+		card.unhighlight()
+
+	if !touched.is_empty():
+		var highest_touched_index: int = -1
+		
+		for touched_card in touched:
+			highest_touched_index = max(highest_touched_index, table.find(touched_card))
+		
+		if highest_touched_index >= 0 && highest_touched_index < table.size():
+			table[highest_touched_index].highlight()
+			current_selected_card_index = highest_touched_index
+			
