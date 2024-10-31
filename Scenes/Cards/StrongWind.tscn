@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cfjm1eefv5cgx"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/strong_wind.gd" id="1_g2brt"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_g2brt")

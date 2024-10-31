@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpfpitbqo7h4p"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/new_winds.gd" id="1_bcgo5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_bcgo5")
