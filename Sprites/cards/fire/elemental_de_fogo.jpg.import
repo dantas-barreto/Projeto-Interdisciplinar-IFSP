@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdmv3flfdan5m"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.22_78ac6e62.jpg-040634a1bfc2b4ff2a887981553ba88c.ctex"
+uid="uid://nkp7obw2ficj"
+path="res://.godot/imported/elemental_de_fogo.jpg-49541bcfe5623e75a1450b86d4a37caf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.22_78ac6e62.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.22_78ac6e62.jpg-040634a1bfc2b4ff2a887981553ba88c.ctex"]
+source_file="res://Sprites/cards/fire/elemental_de_fogo.jpg"
+dest_files=["res://.godot/imported/elemental_de_fogo.jpg-49541bcfe5623e75a1450b86d4a37caf.ctex"]
 
 [params]
 

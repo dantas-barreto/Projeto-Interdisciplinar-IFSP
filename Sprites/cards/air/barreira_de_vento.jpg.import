@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g7domnb2u781"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.07_3782c455.jpg-52b8e412686efdfd5ecbb02e299ce9a8.ctex"
+uid="uid://c06uijictjen7"
+path="res://.godot/imported/barreira_de_vento.jpg-9e99aef41da57dc0d75eb5b23fb9fb3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/fire/WhatsApp Image 2024-10-15 at 12.49.07_3782c455.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.07_3782c455.jpg-52b8e412686efdfd5ecbb02e299ce9a8.ctex"]
+source_file="res://Sprites/cards/air/barreira_de_vento.jpg"
+dest_files=["res://.godot/imported/barreira_de_vento.jpg-9e99aef41da57dc0d75eb5b23fb9fb3b.ctex"]
 
 [params]
 

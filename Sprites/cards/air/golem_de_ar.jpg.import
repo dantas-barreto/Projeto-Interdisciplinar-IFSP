@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfyowqa5cm8in"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.27_c489992f.jpg-a6fab94454c8c4ba6dcb581fe2b1e2e7.ctex"
+uid="uid://dfj0gnxxq7alj"
+path="res://.godot/imported/golem_de_ar.jpg-a781098b6db284020faeb225bd1d078e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.27_c489992f.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.27_c489992f.jpg-a6fab94454c8c4ba6dcb581fe2b1e2e7.ctex"]
+source_file="res://Sprites/cards/air/golem_de_ar.jpg"
+dest_files=["res://.godot/imported/golem_de_ar.jpg-a781098b6db284020faeb225bd1d078e.ctex"]
 
 [params]
 

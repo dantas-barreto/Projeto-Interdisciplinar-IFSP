@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c06uijictjen7"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.25_a13b3183.jpg-d9d78adc293ebb91a8ad264f15ef11a1.ctex"
+uid="uid://c885j06v7daf0"
+path="res://.godot/imported/elemental_de_terra.jpg-af6519c84f96abd128500e48fba89df1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.25_a13b3183.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.25_a13b3183.jpg-d9d78adc293ebb91a8ad264f15ef11a1.ctex"]
+source_file="res://Sprites/cards/earth/elemental_de_terra.jpg"
+dest_files=["res://.godot/imported/elemental_de_terra.jpg-af6519c84f96abd128500e48fba89df1.ctex"]
 
 [params]
 

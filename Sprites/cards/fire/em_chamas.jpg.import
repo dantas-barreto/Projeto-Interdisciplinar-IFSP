@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mf5s7mjksocf"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.26_dc7bb5c3.jpg-eb6d6cd741f447aaa62154af6d49d5a3.ctex"
+uid="uid://co44yr8i235ig"
+path="res://.godot/imported/em_chamas.jpg-dd12ea789c70618e9a314b04b7096f20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.26_dc7bb5c3.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.26_dc7bb5c3.jpg-eb6d6cd741f447aaa62154af6d49d5a3.ctex"]
+source_file="res://Sprites/cards/fire/em_chamas.jpg"
+dest_files=["res://.godot/imported/em_chamas.jpg-dd12ea789c70618e9a314b04b7096f20.ctex"]
 
 [params]
 

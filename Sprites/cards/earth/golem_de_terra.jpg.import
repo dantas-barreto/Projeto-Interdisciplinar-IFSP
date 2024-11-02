@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hvwgobbw3k55"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.38_a90cd444.jpg-efcc4b729e69c98313ba33b6d6629f5a.ctex"
+path="res://.godot/imported/golem_de_terra.jpg-299106a1ef1fbc5c1fb687e5a5d4bbba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.38_a90cd444.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.38_a90cd444.jpg-efcc4b729e69c98313ba33b6d6629f5a.ctex"]
+source_file="res://Sprites/cards/earth/golem_de_terra.jpg"
+dest_files=["res://.godot/imported/golem_de_terra.jpg-299106a1ef1fbc5c1fb687e5a5d4bbba.ctex"]
 
 [params]
 

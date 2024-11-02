@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4pb13ccjb38g"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.41_d6814567.jpg-df32ab95b9f56ae53d2482181aa1dade.ctex"
+uid="uid://bfyowqa5cm8in"
+path="res://.godot/imported/anel_de_vento.jpg-4a2038631feadb50862853979cf47e64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.41_d6814567.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.41_d6814567.jpg-df32ab95b9f56ae53d2482181aa1dade.ctex"]
+source_file="res://Sprites/cards/air/anel_de_vento.jpg"
+dest_files=["res://.godot/imported/anel_de_vento.jpg-4a2038631feadb50862853979cf47e64.ctex"]
 
 [params]
 

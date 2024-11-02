@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qdj3v724kxnv"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.41_f0e86df3.jpg-246a1faabaa09d55c4e15201ecd2c726.ctex"
+uid="uid://chnnasjfblwxf"
+path="res://.godot/imported/mausoleu_de_mana.jpg-2afacbb406a2cd7bd6e8d46ff44be33f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.41_f0e86df3.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.41_f0e86df3.jpg-246a1faabaa09d55c4e15201ecd2c726.ctex"]
+source_file="res://Sprites/cards/earth/mausoleu_de_mana.jpg"
+dest_files=["res://.godot/imported/mausoleu_de_mana.jpg-2afacbb406a2cd7bd6e8d46ff44be33f.ctex"]
 
 [params]
 

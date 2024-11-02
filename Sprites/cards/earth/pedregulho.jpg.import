@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvjvoycw7inx"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.04_511ec2d5.jpg-c7238d1b6cf8b629c333719b9d81ff67.ctex"
+uid="uid://qdj3v724kxnv"
+path="res://.godot/imported/pedregulho.jpg-7b42a5b138d9a42a6bff1e5ac0058eb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/fire/WhatsApp Image 2024-10-15 at 12.49.04_511ec2d5.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.04_511ec2d5.jpg-c7238d1b6cf8b629c333719b9d81ff67.ctex"]
+source_file="res://Sprites/cards/earth/pedregulho.jpg"
+dest_files=["res://.godot/imported/pedregulho.jpg-7b42a5b138d9a42a6bff1e5ac0058eb9.ctex"]
 
 [params]
 

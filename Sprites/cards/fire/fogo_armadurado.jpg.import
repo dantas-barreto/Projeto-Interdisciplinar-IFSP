@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhjrv0y81s0rb"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.37_e15282fd.jpg-2e2b55cb39bb89f6a9f9c9be89cb0480.ctex"
+uid="uid://dqvjvoycw7inx"
+path="res://.godot/imported/fogo_armadurado.jpg-f79b68b248b9685d7d57d7748a0e0078.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.37_e15282fd.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.37_e15282fd.jpg-2e2b55cb39bb89f6a9f9c9be89cb0480.ctex"]
+source_file="res://Sprites/cards/fire/fogo_armadurado.jpg"
+dest_files=["res://.godot/imported/fogo_armadurado.jpg-f79b68b248b9685d7d57d7748a0e0078.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfj0gnxxq7alj"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.27_d902760c.jpg-07b3038f5c09c7d48b1bde612fd197fa.ctex"
+uid="uid://b4pb13ccjb38g"
+path="res://.godot/imported/pedra_de_mana.jpg-edc7944a02a3a49cbe163c1615e6a8ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.27_d902760c.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.27_d902760c.jpg-07b3038f5c09c7d48b1bde612fd197fa.ctex"]
+source_file="res://Sprites/cards/earth/pedra_de_mana.jpg"
+dest_files=["res://.godot/imported/pedra_de_mana.jpg-edc7944a02a3a49cbe163c1615e6a8ce.ctex"]
 
 [params]
 

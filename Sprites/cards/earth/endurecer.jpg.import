@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chnnasjfblwxf"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.39_19bd49ef.jpg-ed4ee386e75edc869cf17e16f1f6e5ce.ctex"
+uid="uid://cljxtkff7yoct"
+path="res://.godot/imported/endurecer.jpg-f251526b465e06404333a9af01dc6f07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.39_19bd49ef.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.39_19bd49ef.jpg-ed4ee386e75edc869cf17e16f1f6e5ce.ctex"]
+source_file="res://Sprites/cards/earth/endurecer.jpg"
+dest_files=["res://.godot/imported/endurecer.jpg-f251526b465e06404333a9af01dc6f07.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2cg0fxpjel3k"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.10_0a4149ab.jpg-e3860f06c79b89e33324b49d39acc609.ctex"
+uid="uid://mf5s7mjksocf"
+path="res://.godot/imported/fadas_de_vento.jpg-a8f1e70dacf5d6fcac20f48a8a0cba35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.10_0a4149ab.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.10_0a4149ab.jpg-e3860f06c79b89e33324b49d39acc609.ctex"]
+source_file="res://Sprites/cards/air/fadas_de_vento.jpg"
+dest_files=["res://.godot/imported/fadas_de_vento.jpg-a8f1e70dacf5d6fcac20f48a8a0cba35.ctex"]
 
 [params]
 

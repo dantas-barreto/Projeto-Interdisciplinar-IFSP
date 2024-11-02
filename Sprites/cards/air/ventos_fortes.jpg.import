@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbd5wmjxw5r7j"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.02_834b46ad.jpg-7527cca2b0184826864350faa804614a.ctex"
+uid="uid://bdmv3flfdan5m"
+path="res://.godot/imported/ventos_fortes.jpg-979bbbe821ab38a90a9627bb553fd738.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/fire/WhatsApp Image 2024-10-15 at 12.49.02_834b46ad.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.02_834b46ad.jpg-7527cca2b0184826864350faa804614a.ctex"]
+source_file="res://Sprites/cards/air/ventos_fortes.jpg"
+dest_files=["res://.godot/imported/ventos_fortes.jpg-979bbbe821ab38a90a9627bb553fd738.ctex"]
 
 [params]
 

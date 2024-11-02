@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c885j06v7daf0"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.38_1e10e66f.jpg-e1d524c841b4df7a34d34569f3d0968e.ctex"
+uid="uid://dbd5wmjxw5r7j"
+path="res://.godot/imported/fogo_magico.jpg-5280cfcc7cc289f306830362b62ce277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.38_1e10e66f.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.38_1e10e66f.jpg-e1d524c841b4df7a34d34569f3d0968e.ctex"]
+source_file="res://Sprites/cards/fire/fogo_magico.jpg"
+dest_files=["res://.godot/imported/fogo_magico.jpg-5280cfcc7cc289f306830362b62ce277.ctex"]
 
 [params]
 

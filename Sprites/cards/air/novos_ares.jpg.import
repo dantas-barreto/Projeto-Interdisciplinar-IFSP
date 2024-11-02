@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://psb2hpfofm1x"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.25_30027bc3.jpg-42832f5c56ce51c1ef1ebd28cbf4abdf.ctex"
+uid="uid://b2cg0fxpjel3k"
+path="res://.godot/imported/novos_ares.jpg-e5e448925966bab9c72b8e49f6c4ef18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.25_30027bc3.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.25_30027bc3.jpg-42832f5c56ce51c1ef1ebd28cbf4abdf.ctex"]
+source_file="res://Sprites/cards/air/novos_ares.jpg"
+dest_files=["res://.godot/imported/novos_ares.jpg-e5e448925966bab9c72b8e49f6c4ef18.ctex"]
 
 [params]
 

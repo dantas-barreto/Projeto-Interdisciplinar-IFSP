@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cljxtkff7yoct"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.37_a1c1ceac.jpg-39c6ffb9e9c0ff89f5bd8336dc833c28.ctex"
+uid="uid://psb2hpfofm1x"
+path="res://.godot/imported/elemental_de_vento.jpg-6a95d346d940d5dbed558e3e01652062.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.53.37_a1c1ceac.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.53.37_a1c1ceac.jpg-39c6ffb9e9c0ff89f5bd8336dc833c28.ctex"]
+source_file="res://Sprites/cards/air/elemental_de_vento.jpg"
+dest_files=["res://.godot/imported/elemental_de_vento.jpg-6a95d346d940d5dbed558e3e01652062.ctex"]
 
 [params]
 
