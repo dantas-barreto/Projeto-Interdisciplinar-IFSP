@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds1m1gd1jkho8"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.26_84d4b661.jpg-35e05c83b1fbe4dccb15b4a4ff8ae68d.ctex"
+uid="uid://qgpx6mgnqh7s"
+path="res://.godot/imported/revitalizar.jpg-77ad63b1af29c83d40d303c3cd3a2e64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/air/WhatsApp Image 2024-10-15 at 12.50.26_84d4b661.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.50.26_84d4b661.jpg-35e05c83b1fbe4dccb15b4a4ff8ae68d.ctex"]
+source_file="res://Sprites/cards/water/revitalizar.jpg"
+dest_files=["res://.godot/imported/revitalizar.jpg-77ad63b1af29c83d40d303c3cd3a2e64.ctex"]
 
 [params]
 

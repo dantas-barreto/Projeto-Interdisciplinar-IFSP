@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpde622ye4u5u"
-path="res://.godot/imported/elemental.jpg-02b89c972ce06fdebebe97109b088052.ctex"
+uid="uid://c1xnpewct6nr3"
+path="res://.godot/imported/redemoinho.jpg-d582241d0c0b30cc8c5de001e776b36d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/elemental.jpg"
-dest_files=["res://.godot/imported/elemental.jpg-02b89c972ce06fdebebe97109b088052.ctex"]
+source_file="res://Sprites/cards/water/redemoinho.jpg"
+dest_files=["res://.godot/imported/redemoinho.jpg-d582241d0c0b30cc8c5de001e776b36d.ctex"]
 
 [params]
 

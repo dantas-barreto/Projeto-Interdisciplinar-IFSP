@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbw8hruc1gph5"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_f18o2"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_xu3ex"]
+[ext_resource type="Texture2D" uid="uid://dsdchkfo3egbn" path="res://Sprites/cards/water/chuva_magica.jpg" id="3_crxhk"]
+[ext_resource type="Script" path="res://Scripts/Cards/magic_rain_action.gd" id="3_jctpc"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="4_06qey"]
+
+[node name="MagicRain" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_f18o2")
+action = NodePath("MagicRainAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+position = Vector2(0.250013, -1.33514e-05)
+scale = Vector2(0.241683, 0.25)
+texture = ExtResource("3_crxhk")
+
+[node name="CardFrameSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("4_06qey")
+
+[node name="Card" parent="." instance=ExtResource("2_xu3ex")]
+card_name = "Magic Rain"
+card_description = "Receive 3 HP    Draw 1 card"
+card_cost = 2
+
+[node name="MagicRainAction" type="Node2D" parent="."]
+script = ExtResource("3_jctpc")

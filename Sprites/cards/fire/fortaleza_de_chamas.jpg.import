@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6qdgwugscpta"
-path="res://.godot/imported/moldura_1.png-ec08827c58e82faeb4e55c2466327670.ctex"
+uid="uid://smomgsjp30ru"
+path="res://.godot/imported/fortaleza_de_chamas.jpg-a855384c5e8c2aba665c824118af32a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/borders/moldura_1.png"
-dest_files=["res://.godot/imported/moldura_1.png-ec08827c58e82faeb4e55c2466327670.ctex"]
+source_file="res://Sprites/cards/fire/fortaleza_de_chamas.jpg"
+dest_files=["res://.godot/imported/fortaleza_de_chamas.jpg-a855384c5e8c2aba665c824118af32a6.ctex"]
 
 [params]
 

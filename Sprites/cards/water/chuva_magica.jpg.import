@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://smomgsjp30ru"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.48.59_dd732cb2.jpg-8235772fb4892fefef5e579ff24f8d43.ctex"
+uid="uid://dsdchkfo3egbn"
+path="res://.godot/imported/chuva_magica.jpg-171f2b529a93662b60a3326d1d7e1f4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/fire/WhatsApp Image 2024-10-15 at 12.48.59_dd732cb2.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.48.59_dd732cb2.jpg-8235772fb4892fefef5e579ff24f8d43.ctex"]
+source_file="res://Sprites/cards/water/chuva_magica.jpg"
+dest_files=["res://.godot/imported/chuva_magica.jpg-171f2b529a93662b60a3326d1d7e1f4b.ctex"]
 
 [params]
 

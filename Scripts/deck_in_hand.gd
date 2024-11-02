@@ -6,6 +6,8 @@ signal card_activated(card: UsableCard)
 @onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/RevivifyCard.tscn")
 @onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/DefendCard.tscn")
 
+@onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Fireball.tscn")
+
 @onready var table: Table = $Table
 @onready var hand: Hand = $Hand
 

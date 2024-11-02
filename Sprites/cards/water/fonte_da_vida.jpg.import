@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvlogn5m65toi"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.51.50_c9b5f723.jpg-6d4ea90a4cf1f2fe851f8169a2aedf4a.ctex"
+uid="uid://ct3pig68p1cey"
+path="res://.godot/imported/fonte_da_vida.jpg-e8d106580944052e917c4a0db50159b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/WhatsApp Image 2024-10-15 at 12.51.50_c9b5f723.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.51.50_c9b5f723.jpg-6d4ea90a4cf1f2fe851f8169a2aedf4a.ctex"]
+source_file="res://Sprites/cards/water/fonte_da_vida.jpg"
+dest_files=["res://.godot/imported/fonte_da_vida.jpg-e8d106580944052e917c4a0db50159b6.ctex"]
 
 [params]
 

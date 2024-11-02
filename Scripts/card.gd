@@ -4,10 +4,11 @@ class_name Card extends Node2D
 signal mouse_entered(card: Card)
 signal mouse_exited(card: Card)
 
+@export var base_card_sprite: Sprite2D
+@export var card_frame_sprite: Sprite2D
 @export var card_name: String = "Card Name"
 @export var card_description: String = "Card Description"
 @export var card_cost: int = 1
-@export var card_image: Sprite2D
 
 @onready var cost_lbl: Label = $CardCost/CardCostLabel
 @onready var name_lbl: Label = $CardName/CardNameLabel

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cskxypfm7p07v"
-path="res://.godot/imported/earth soul.png-4f6b90ad7483ec7d350a45ec1beceb52.ctex"
+uid="uid://dtsv3tv83b5km"
+path="res://.godot/imported/moldura_agua.png-10fc22d91de538d299ccee90a34f0ec5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/borders/earth soul.png"
-dest_files=["res://.godot/imported/earth soul.png-4f6b90ad7483ec7d350a45ec1beceb52.ctex"]
+source_file="res://Sprites/cards/borders/moldura_agua.png"
+dest_files=["res://.godot/imported/moldura_agua.png-10fc22d91de538d299ccee90a34f0ec5.ctex"]
 
 [params]
 

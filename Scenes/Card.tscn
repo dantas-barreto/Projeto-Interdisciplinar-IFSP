@@ -1,24 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2weeh3iabe3x"]
+[gd_scene load_steps=9 format=3 uid="uid://c2weeh3iabe3x"]
 
-[ext_resource type="Texture2D" uid="uid://dsu6gxuxcdgcs" path="res://Sprites/BaseCard.png" id="1_ivddc"]
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_vh5a6"]
-[ext_resource type="Texture2D" uid="uid://lkoh2wioj3vm" path="res://Sprites/BaseCost.png" id="2_76p4v"]
+[ext_resource type="Texture2D" uid="uid://dsdchkfo3egbn" path="res://Sprites/cards/water/chuva_magica.jpg" id="2_3lb4m"]
 [ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="3_vokjs"]
-[ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="4_hjxft"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="5_fqvqg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
+font = ExtResource("3_vokjs")
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_dn6af"]
 font = ExtResource("3_vokjs")
-font_size = 48
+font_size = 60
+font_color = Color(0.201527, 0.201527, 0.201527, 1)
 shadow_color = Color(0, 0, 0, 0.392157)
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="LabelSettings" id="LabelSettings_581ge"]
 font = ExtResource("3_vokjs")
 font_size = 48
-
-[sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
-font = ExtResource("3_vokjs")
-font_size = 48
+font_color = Color(0.2, 0.2, 0.2, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6ho"]
 size = Vector2(485, 640)
@@ -27,51 +28,53 @@ size = Vector2(485, 640)
 script = ExtResource("1_vh5a6")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_ivddc")
+position = Vector2(-1.33514e-05, -2.77162e-05)
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_3lb4m")
 
-[node name="CardCost" type="Node2D" parent="."]
-position = Vector2(223, -303)
-
-[node name="CardCostSprite" type="Sprite2D" parent="CardCost"]
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("2_76p4v")
-
-[node name="CardCostLabel" type="Label" parent="CardCost"]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 21.0
-offset_bottom = 20.0
-text = "1"
-label_settings = SubResource("LabelSettings_dn6af")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CardImage" type="Node2D" parent="."]
-position = Vector2(0, -100)
-
-[node name="CardImageSprite" type="Sprite2D" parent="CardImage"]
-texture = ExtResource("4_hjxft")
-
-[node name="CardName" type="Node2D" parent="."]
-position = Vector2(-210, 52)
-
-[node name="CardNameLabel" type="Label" parent="CardName"]
-offset_right = 420.0
-offset_bottom = 39.0
-text = "Card Name"
-label_settings = SubResource("LabelSettings_581ge")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+[node name="CardFrameSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("5_fqvqg")
 
 [node name="CardDescription" type="Node2D" parent="."]
 position = Vector2(-210, 100)
 
 [node name="CardDescriptionLabel" type="Label" parent="CardDescription"]
-offset_right = 420.0
-offset_bottom = 190.0
+offset_left = -6.0
+offset_top = 21.0
+offset_right = 426.0
+offset_bottom = 194.0
 text = "Card Description"
 label_settings = SubResource("LabelSettings_r03sg")
+autowrap_mode = 3
+
+[node name="CardCost" type="Node2D" parent="."]
+
+[node name="CardCostLabel" type="Label" parent="CardCost"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 180.0
+offset_top = 250.0
+offset_right = 201.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_dn6af")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardName" type="Node2D" parent="."]
+position = Vector2(-210, -308)
+
+[node name="CardNameLabel" type="Label" parent="CardName"]
+offset_top = -4.0
+offset_right = 420.0
+offset_bottom = 35.0
+text = "Card Name"
+label_settings = SubResource("LabelSettings_581ge")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
@@ -80,6 +83,7 @@ autowrap_mode = 3
 modulate = Color(1, 0.5875, 0.25, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("RectangleShape2D_ke6ho")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

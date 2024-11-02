@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1xnpewct6nr3"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.51.50_5fe66e4f.jpg-b278f98fb854663232a732f5c93ac635.ctex"
+uid="uid://ds1m1gd1jkho8"
+path="res://.godot/imported/tornado.jpg-de33ed0fe7cf11cf0205e4e91b9435df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/WhatsApp Image 2024-10-15 at 12.51.50_5fe66e4f.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.51.50_5fe66e4f.jpg-b278f98fb854663232a732f5c93ac635.ctex"]
+source_file="res://Sprites/cards/air/tornado.jpg"
+dest_files=["res://.godot/imported/tornado.jpg-de33ed0fe7cf11cf0205e4e91b9435df.ctex"]
 
 [params]
 

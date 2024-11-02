@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qgpx6mgnqh7s"
-path="res://.godot/imported/gota da curaa.jpg-6106d698096be3513465d7a87b6463b6.ctex"
+uid="uid://c1dblwsho82k0"
+path="res://.godot/imported/fortaleza.jpg-f7962c8010854958cdb8c578627942db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/gota da curaa.jpg"
-dest_files=["res://.godot/imported/gota da curaa.jpg-6106d698096be3513465d7a87b6463b6.ctex"]
+source_file="res://Sprites/cards/earth/fortaleza.jpg"
+dest_files=["res://.godot/imported/fortaleza.jpg-f7962c8010854958cdb8c578627942db.ctex"]
 
 [params]
 

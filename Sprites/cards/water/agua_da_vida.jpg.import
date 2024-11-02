@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvsucwa0dmign"
-path="res://.godot/imported/gota da cura.jpg-2e5342d48a22ea164c2b207c69f64e88.ctex"
+uid="uid://cvlogn5m65toi"
+path="res://.godot/imported/agua_da_vida.jpg-7a536c5962194d7e593f1b0eaec71e58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/gota da cura.jpg"
-dest_files=["res://.godot/imported/gota da cura.jpg-2e5342d48a22ea164c2b207c69f64e88.ctex"]
+source_file="res://Sprites/cards/water/agua_da_vida.jpg"
+dest_files=["res://.godot/imported/agua_da_vida.jpg-7a536c5962194d7e593f1b0eaec71e58.ctex"]
 
 [params]
 

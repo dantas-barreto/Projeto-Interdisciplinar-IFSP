@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct3pig68p1cey"
-path="res://.godot/imported/fonte.jpg-8a9c107d7bb88f2e2f2e2147716f1d7d.ctex"
+uid="uid://cskxypfm7p07v"
+path="res://.godot/imported/moldura_terra.png-2a94350593061874bb6393036a6133e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/water/fonte.jpg"
-dest_files=["res://.godot/imported/fonte.jpg-8a9c107d7bb88f2e2f2e2147716f1d7d.ctex"]
+source_file="res://Sprites/cards/borders/moldura_terra.png"
+dest_files=["res://.godot/imported/moldura_terra.png-2a94350593061874bb6393036a6133e5.ctex"]
 
 [params]
 

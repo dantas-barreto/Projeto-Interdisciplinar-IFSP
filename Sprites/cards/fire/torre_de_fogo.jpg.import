@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1dblwsho82k0"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.54.49_796f62fd.jpg-510eb92c205cee5b0928095defd60354.ctex"
+uid="uid://cowmb0mrg6a2y"
+path="res://.godot/imported/torre_de_fogo.jpg-a7c28b626dfc74dcb3a6083b22623fb1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/earth/WhatsApp Image 2024-10-15 at 12.54.49_796f62fd.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.54.49_796f62fd.jpg-510eb92c205cee5b0928095defd60354.ctex"]
+source_file="res://Sprites/cards/fire/torre_de_fogo.jpg"
+dest_files=["res://.godot/imported/torre_de_fogo.jpg-a7c28b626dfc74dcb3a6083b22623fb1.ctex"]
 
 [params]
 

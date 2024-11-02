@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cowmb0mrg6a2y"
-path="res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.00_dc949094.jpg-e0be07e34100c4e5c6e2af4f2e7df2f2.ctex"
+uid="uid://cpde622ye4u5u"
+path="res://.godot/imported/elemental_de_agua.jpg-34038c707bf82196514cb3c800121985.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/cards/fire/WhatsApp Image 2024-10-15 at 12.49.00_dc949094.jpg"
-dest_files=["res://.godot/imported/WhatsApp Image 2024-10-15 at 12.49.00_dc949094.jpg-e0be07e34100c4e5c6e2af4f2e7df2f2.ctex"]
+source_file="res://Sprites/cards/water/elemental_de_agua.jpg"
+dest_files=["res://.godot/imported/elemental_de_agua.jpg-34038c707bf82196514cb3c800121985.ctex"]
 
 [params]
 
