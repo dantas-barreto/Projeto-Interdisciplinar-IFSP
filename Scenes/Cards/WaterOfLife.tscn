@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqkvsxl20eh3p"]
+[gd_scene load_steps=6 format=3 uid="uid://bqkvsxl20eh3p"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/water_of_life.gd" id="1_km5ba"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_lvxd3"]
+[ext_resource type="Texture2D" uid="uid://cvlogn5m65toi" path="res://Sprites/cards/water/agua_da_vida.jpg" id="2_m6teu"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_jc6cb"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_rc183"]
+[ext_resource type="Script" path="res://Scripts/Cards/water_of_life_action.gd" id="5_ayv6e"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_km5ba")
+[node name="WaterOfLife" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_lvxd3")
+action = NodePath("WaterOfLifeAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_m6teu")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_jc6cb")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_rc183")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Water of Life"
+card_description = "Revive a creature from cemitery to the arena"
+card_cost = 5
+
+[node name="WaterOfLifeAction" type="Node2D" parent="."]
+script = ExtResource("5_ayv6e")

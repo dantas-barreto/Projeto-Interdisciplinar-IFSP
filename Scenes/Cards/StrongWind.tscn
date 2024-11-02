@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfjm1eefv5cgx"]
+[gd_scene load_steps=6 format=3 uid="uid://cfjm1eefv5cgx"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/strong_wind.gd" id="1_g2brt"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_gqxm2"]
+[ext_resource type="Texture2D" uid="uid://bdmv3flfdan5m" path="res://Sprites/cards/air/ventos_fortes.jpg" id="2_mhb4d"]
+[ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_teal1"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_evaap"]
+[ext_resource type="Script" path="res://Scripts/Cards/strong_wind_action.gd" id="5_cu6lw"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_g2brt")
+[node name="StrongWind" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_gqxm2")
+action = NodePath("StrongWindAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
+texture = ExtResource("2_mhb4d")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_teal1")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_evaap")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Strong Winds"
+card_description = "The target cannot defend itself in this turn"
+card_cost = 2
+
+[node name="StrongWindAction" type="Node2D" parent="."]
+script = ExtResource("5_cu6lw")

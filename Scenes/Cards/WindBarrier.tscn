@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnmdh8yjrf20p"]
+[gd_scene load_steps=6 format=3 uid="uid://cnmdh8yjrf20p"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/wind_barrier.gd" id="1_8e5l5"]
+[ext_resource type="Script" path="res://Scripts/Cards/wind_barrier_action.gd" id="1_8e5l5"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_8ky4b"]
+[ext_resource type="Texture2D" uid="uid://c06uijictjen7" path="res://Sprites/cards/air/barreira_de_vento.jpg" id="2_syiqe"]
+[ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_fprr1"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_2rg0c"]
 
-[node name="Node2D" type="Node2D"]
+[node name="WindBarrier" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_8ky4b")
+action = NodePath("WindBarrierAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
+texture = ExtResource("2_syiqe")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_fprr1")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_2rg0c")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Wind Barrier"
+card_description = "Target cannot attack you for 2 turns"
+card_cost = 2
+
+[node name="WindBarrierAction" type="Node2D" parent="."]
 script = ExtResource("1_8e5l5")

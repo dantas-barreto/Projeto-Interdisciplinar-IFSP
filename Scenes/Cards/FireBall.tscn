@@ -20,8 +20,9 @@ position = Vector2(1.06096e-05, -1.07288e-05)
 scale = Vector2(0.193548, 0.2)
 texture = ExtResource("4_wn1ob")
 
-[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite") instance=ExtResource("2_yqfrp")]
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_yqfrp")]
 base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../CardFrameSprite")
 card_name = "Fireball"
 card_description = "Inflict 5 damage to target"
 card_cost = 3

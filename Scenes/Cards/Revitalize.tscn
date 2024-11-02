@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bgijekgjc1tyk"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/revitalize_action.gd" id="1_b1tsi"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_cidj7"]
+[ext_resource type="Texture2D" uid="uid://qgpx6mgnqh7s" path="res://Sprites/cards/water/revitalizar.jpg" id="2_1fyk3"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_mdwpk"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_153cs"]
+
+[node name="Revitalize" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_cidj7")
+action = NodePath("RevitalizeAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("2_1fyk3")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_153cs")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_mdwpk")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Revitalize"
+card_description = "Receive 1 HP     Buy 2 Cards"
+card_cost = 2
+
+[node name="RevitalizeAction" type="Node2D" parent="."]
+script = ExtResource("1_b1tsi")

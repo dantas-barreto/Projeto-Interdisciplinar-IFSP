@@ -19,7 +19,9 @@ texture = ExtResource("3_crxhk")
 scale = Vector2(0.193548, 0.2)
 texture = ExtResource("4_06qey")
 
-[node name="Card" parent="." instance=ExtResource("2_xu3ex")]
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_xu3ex")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../CardFrameSprite")
 card_name = "Magic Rain"
 card_description = "Receive 3 HP    Draw 1 card"
 card_cost = 2

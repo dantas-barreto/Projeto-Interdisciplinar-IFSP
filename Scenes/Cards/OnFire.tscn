@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://u2qqqih0nnv3"]
+[gd_scene load_steps=6 format=3 uid="uid://u2qqqih0nnv3"]
 
 [ext_resource type="Script" path="res://Scripts/Cards/on_fire.gd" id="1_vj4rx"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_x5aaq"]
+[ext_resource type="Texture2D" uid="uid://co44yr8i235ig" path="res://Sprites/cards/fire/em_chamas.jpg" id="2_jgcrm"]
+[ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_5o6kt"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_4e32j"]
 
-[node name="Node2D" type="Node2D"]
+[node name="OnFire" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_x5aaq")
+action = NodePath("OnFireAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
+texture = ExtResource("2_jgcrm")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_5o6kt")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_4e32j")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "On Fire"
+card_description = "Do 2 damage to target, buy 2 cards and discard 1"
+card_cost = 2
+
+[node name="OnFireAction" type="Node2D" parent="."]
 script = ExtResource("1_vj4rx")

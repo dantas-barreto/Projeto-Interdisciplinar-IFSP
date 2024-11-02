@@ -33,7 +33,6 @@ scale = Vector2(0.241935, 0.25)
 texture = ExtResource("2_3lb4m")
 
 [node name="CardFrameSprite" type="Sprite2D" parent="."]
-visible = false
 scale = Vector2(0.193548, 0.2)
 texture = ExtResource("5_fqvqg")
 
@@ -47,6 +46,7 @@ offset_right = 426.0
 offset_bottom = 194.0
 text = "Card Description"
 label_settings = SubResource("LabelSettings_r03sg")
+horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="CardCost" type="Node2D" parent="."]

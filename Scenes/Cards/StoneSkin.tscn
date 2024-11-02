@@ -1,6 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://c6l7tnvxjd8hm"]
+[gd_scene load_steps=6 format=3 uid="uid://c6l7tnvxjd8hm"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/stone_skin.gd" id="1_73ifx"]
+[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_mkacg"]
+[ext_resource type="Texture2D" uid="uid://hvwgobbw3k55" path="res://Sprites/cards/earth/endurecer.jpg" id="2_u08ad"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_66fhp"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_5xkbw"]
+[ext_resource type="Script" path="res://Scripts/Cards/stone_skin_action.gd" id="5_pipch"]
 
-[node name="Node2D" type="Node2D"]
-script = ExtResource("1_73ifx")
+[node name="StoneSkin" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_mkacg")
+action = NodePath("StoneSkinAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_u08ad")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_66fhp")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_5xkbw")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Stone Skin"
+card_description = "Target receive Resistance 4 until the end of turn"
+card_cost = 2
+
+[node name="StoneSkinAction" type="Node2D" parent="."]
+script = ExtResource("5_pipch")
