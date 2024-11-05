@@ -41,7 +41,10 @@ func unhighlight():
 	base_sprite.set_modulate(Color(1,1,1,1))
 
 func get_cost() -> int:
-	return $Card.CardCost
+	return card_cost
+
+func get_type() -> String:
+	return type
 
 func activate():
 	pass

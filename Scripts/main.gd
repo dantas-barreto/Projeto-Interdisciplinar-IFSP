@@ -50,7 +50,7 @@ func _on_end_turn_pressed() -> void:
 
 
 func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
-	var card_cost: int = card.get_cost()
+	var card_cost: int = card.getCost()
 	card.activate({
 	"caster": $MainScreen/PlayerCharacter,
 	"targets": $MainScreen/EnemyCharacter
