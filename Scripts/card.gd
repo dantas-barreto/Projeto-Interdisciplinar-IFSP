@@ -9,6 +9,7 @@ signal mouse_exited(card: Card)
 @export var card_name: String = "Card Name"
 @export var card_description: String = "Card Description"
 @export var card_cost: int = 1
+@export var type: String = "spell"
 
 @onready var cost_lbl: Label = $CardCost/CardCostLabel
 @onready var name_lbl: Label = $CardName/CardNameLabel
@@ -38,6 +39,9 @@ func highlight():
 
 func unhighlight():
 	base_sprite.set_modulate(Color(1,1,1,1))
+
+func get_cost() -> int:
+	return $Card.CardCost
 
 func activate():
 	pass
