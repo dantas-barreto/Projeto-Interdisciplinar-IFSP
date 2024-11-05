@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpfpitbqo7h4p"]
 
 [ext_resource type="Script" path="res://Scripts/Cards/new_winds_action.gd" id="1_bcgo5"]
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_ljjnm"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_ljjnm"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_0kx1n"]
 [ext_resource type="Texture2D" uid="uid://b2cg0fxpjel3k" path="res://Sprites/cards/air/novos_ares.jpg" id="2_vfn2q"]
 [ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_0nhbp"]

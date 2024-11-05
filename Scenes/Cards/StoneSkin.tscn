@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6l7tnvxjd8hm"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_mkacg"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_mkacg"]
 [ext_resource type="Texture2D" uid="uid://hvwgobbw3k55" path="res://Sprites/cards/earth/endurecer.jpg" id="2_u08ad"]
 [ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_66fhp"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_5xkbw"]

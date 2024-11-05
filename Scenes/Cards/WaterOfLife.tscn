@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqkvsxl20eh3p"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_lvxd3"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_lvxd3"]
 [ext_resource type="Texture2D" uid="uid://cvlogn5m65toi" path="res://Sprites/cards/water/agua_da_vida.jpg" id="2_m6teu"]
 [ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_jc6cb"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_rc183"]

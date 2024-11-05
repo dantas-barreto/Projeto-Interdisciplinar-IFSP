@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b3ll2bgg57fof"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_m2enc"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_m2enc"]
 [ext_resource type="Texture2D" uid="uid://g7domnb2u781" path="res://Sprites/cards/fire/enfurecer.jpg" id="2_krlth"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_w787h"]
 [ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_6qnfe"]

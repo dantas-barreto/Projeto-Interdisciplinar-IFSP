@@ -23,12 +23,12 @@ texture = ExtResource("4_42njd")
 [node name="MainScreen" type="Node2D" parent="."]
 
 [node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(400, 800)
-scale = Vector2(2, 2)
+position = Vector2(300, 810)
+scale = Vector2(1.5, 1.5)
 
 [node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(1100, 100)
-scale = Vector2(2, 2)
+position = Vector2(1300, 90)
+scale = Vector2(1.5, 1.5)
 
 [node name="Inflict1Damage" type="Button" parent="."]
 offset_left = 2.0
@@ -50,6 +50,13 @@ offset_top = 800.0
 offset_right = 1480.0
 offset_bottom = 835.0
 text = "End Turn"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 100.0
+offset_top = 800.0
+offset_right = 147.0
+offset_bottom = 831.0
+text = "Deck"
 
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfjm1eefv5cgx"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_gqxm2"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_gqxm2"]
 [ext_resource type="Texture2D" uid="uid://bdmv3flfdan5m" path="res://Sprites/cards/air/ventos_fortes.jpg" id="2_mhb4d"]
 [ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_teal1"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_evaap"]

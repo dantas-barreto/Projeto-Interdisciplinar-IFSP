@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://36m42xks2nki"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_117c2"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_117c2"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_yqfrp"]
 [ext_resource type="Script" path="res://Scripts/Cards/fireball_action.gd" id="3_b6f36"]
 [ext_resource type="Texture2D" uid="uid://c8ube7vk71yua" path="res://Sprites/cards/fire/fireball.jpg" id="3_nut24"]

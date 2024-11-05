@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbw8hruc1gph5"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usuable_card.gd" id="1_f18o2"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_f18o2"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_xu3ex"]
 [ext_resource type="Texture2D" uid="uid://dsdchkfo3egbn" path="res://Sprites/cards/water/chuva_magica.jpg" id="3_crxhk"]
 [ext_resource type="Script" path="res://Scripts/Cards/magic_rain_action.gd" id="3_jctpc"]
