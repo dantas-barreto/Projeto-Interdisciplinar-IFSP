@@ -10,10 +10,9 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_30kro")
 action = NodePath("AttackAction")
 
-[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("1_upxq8")]
+[node name="Card" parent="." instance=ExtResource("1_upxq8")]
 card_name = "Furious Godot"
 card_description = "Attack 1"
-card_image = NodePath("../CardSprite")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -40)

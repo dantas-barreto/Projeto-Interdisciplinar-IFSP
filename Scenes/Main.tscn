@@ -58,6 +58,7 @@ offset_right = 147.0
 offset_bottom = 831.0
 text = "Deck"
 
+[connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

@@ -30,8 +30,11 @@ func _on_defend_pressed() -> void:
 	hand.add_card(defendCard)
 
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
-	hand.remove_card(hand.current_selected_card_index)
-	table.add_card(card)
+	if(card.type == "spell"):
+		card_activated.emit(card)
+	else:
+		hand.remove_card(hand.current_selected_card_index)
+		table.add_card(card)
 
 func _on_table_card_activated(card: UsableCard) -> void:
 	card_activated.emit(card)

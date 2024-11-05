@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 
 func _on_table_card_activated(card: UsableCard) -> void:
+	var card_cost: int = card.get_cost()
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
@@ -46,3 +47,11 @@ func _on_inflict_3_damage_pressed() -> void:
 func _on_end_turn_pressed() -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		game_control.transition(GameController.GameState.ENEMY_TURN)
+
+
+func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
+	var card_cost: int = card.get_cost()
+	card.activate({
+	"caster": $MainScreen/PlayerCharacter,
+	"targets": $MainScreen/EnemyCharacter
+	})
