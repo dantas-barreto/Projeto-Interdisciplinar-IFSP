@@ -17,6 +17,9 @@ func _ready():
 func _process(delta):
 	pass
 
+func reset():
+	$Hand.empty_hand()
+
 func _on_attack_pressed():
 	var attackCard = attackCardScene.instantiate()
 	hand.add_card(attackCard)
@@ -30,7 +33,7 @@ func _on_defend_pressed() -> void:
 	hand.add_card(defendCard)
 
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
-	if(card.gettype() == "spell"):
+	if(card.get_type() == "spell"):
 		card_activated.emit(card)
 	else:
 		table.add_card(card)

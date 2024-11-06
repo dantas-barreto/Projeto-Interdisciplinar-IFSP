@@ -1,14 +1,72 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4kxd1afo5m68"]
+[gd_scene load_steps=8 format=3 uid="uid://b4kxd1afo5m68"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_1kloo"]
 [ext_resource type="PackedScene" uid="uid://fic5xepe6wyd" path="res://Scenes/Character.tscn" id="1_fwshs"]
 [ext_resource type="PackedScene" uid="uid://b38wveyi7a4c7" path="res://Scenes/DeckInHand.tscn" id="1_v0gtk"]
+[ext_resource type="LabelSettings" uid="uid://di3usyojom3jf" path="res://LabelSettings/game_over.tres" id="2_bw8w6"]
 [ext_resource type="Script" path="res://Scripts/game_controller.gd" id="2_rb38j"]
+[ext_resource type="LabelSettings" uid="uid://ddiyde6enub2x" path="res://LabelSettings/victory.tres" id="3_ctqu4"]
 [ext_resource type="Texture2D" uid="uid://c1ptdhrdpy5r" path="res://Sprites/cards/arena.jpg" id="4_42njd"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player_character")]
 script = ExtResource("1_1kloo")
 player_character = NodePath("MainScreen/PlayerCharacter")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameOverOverlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 0.392157)
+
+[node name="GameOverLabel" type="Label" parent="CanvasLayer/GameOverOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -41.0
+offset_right = 219.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over..."
+label_settings = ExtResource("2_bw8w6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VictoryOverlay" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 1, 0, 0.392157)
+
+[node name="VictoryLabel" type="Label" parent="CanvasLayer/VictoryOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -25.0
+offset_right = 131.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Victory!!!"
+label_settings = ExtResource("3_ctqu4")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("2_rb38j")
@@ -25,10 +83,14 @@ texture = ExtResource("4_42njd")
 [node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
 position = Vector2(300, 810)
 scale = Vector2(1.5, 1.5)
+starting_health = null
+starting_armor = null
 
 [node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
 position = Vector2(1300, 90)
 scale = Vector2(1.5, 1.5)
+starting_health = null
+starting_armor = null
 
 [node name="Inflict1Damage" type="Button" parent="."]
 offset_left = 2.0

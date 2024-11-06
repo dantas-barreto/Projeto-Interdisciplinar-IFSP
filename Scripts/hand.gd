@@ -15,6 +15,13 @@ var hand: Array = []
 var touched: Array = []
 var current_selected_card_index: int = -1
 
+func empty_hand():
+	current_selected_card_index = -1
+	for card in hand:
+		card.queue_free()
+	hand = []
+	touched = []
+
 func add_card(card: Node2D):
 	hand.push_back(card)
 	add_child(card)

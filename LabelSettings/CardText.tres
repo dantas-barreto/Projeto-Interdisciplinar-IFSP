@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ck2udjr6wr1po"]
+
+[ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="1_lal53"]
+
+[resource]
+font = ExtResource("1_lal53")
+font_size = 48
+shadow_color = Color(0, 0, 0, 0.588235)
+shadow_offset = Vector2(3, 3)

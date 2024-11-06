@@ -17,10 +17,10 @@ func highlight():
 func unhighlight():
 	$Card.unhighlight()
 
-func gettype():
+func get_type():
 	return $Card.get_type()
 
-func getCost():
+func get_cost():
 	return $Card.get_cost()
 
 func _on_card_mouse_entered(card: Card):

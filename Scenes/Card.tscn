@@ -1,25 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2weeh3iabe3x"]
+[gd_scene load_steps=7 format=3 uid="uid://c2weeh3iabe3x"]
 
 [ext_resource type="Script" path="res://Scripts/card.gd" id="1_vh5a6"]
 [ext_resource type="Texture2D" uid="uid://dsdchkfo3egbn" path="res://Sprites/cards/water/chuva_magica.jpg" id="2_3lb4m"]
-[ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="3_vokjs"]
+[ext_resource type="LabelSettings" uid="uid://ck2udjr6wr1po" path="res://LabelSettings/CardText.tres" id="4_p578d"]
 [ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="5_fqvqg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_r03sg"]
-font = ExtResource("3_vokjs")
-font_size = 48
-
-[sub_resource type="LabelSettings" id="LabelSettings_dn6af"]
-font = ExtResource("3_vokjs")
-font_size = 60
-font_color = Color(0.201527, 0.201527, 0.201527, 1)
-shadow_color = Color(0, 0, 0, 0.392157)
-shadow_offset = Vector2(2, 2)
-
-[sub_resource type="LabelSettings" id="LabelSettings_581ge"]
-font = ExtResource("3_vokjs")
-font_size = 48
-font_color = Color(0.2, 0.2, 0.2, 1)
+[ext_resource type="LabelSettings" uid="uid://dd0v8fsndlas2" path="res://LabelSettings/CardCost.tres" id="5_jbf56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke6ho"]
 size = Vector2(485, 640)
@@ -45,7 +30,7 @@ offset_top = 21.0
 offset_right = 426.0
 offset_bottom = 194.0
 text = "Card Description"
-label_settings = SubResource("LabelSettings_r03sg")
+label_settings = ExtResource("4_p578d")
 horizontal_alignment = 1
 autowrap_mode = 3
 
@@ -62,7 +47,7 @@ offset_bottom = 289.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "1"
-label_settings = SubResource("LabelSettings_dn6af")
+label_settings = ExtResource("5_jbf56")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -74,7 +59,7 @@ offset_top = -4.0
 offset_right = 420.0
 offset_bottom = 35.0
 text = "Card Name"
-label_settings = SubResource("LabelSettings_581ge")
+label_settings = ExtResource("4_p578d")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

@@ -1,8 +1,11 @@
 @tool
 class_name Character extends Node2D
 
-@export var health: int = 20
-@export var armor: int = 0
+@export var starting_health: int = 20
+@export var starting_armor: int = 0
+
+var health = 20
+var armor = 0
 
 @onready var health_label: Label = $Sprite2D/HealthLabel
 @onready var armor_label: Label = $ArmorLabel
@@ -38,8 +41,16 @@ func take_damage(amount: int):
 func add_health(amount: int):
 	health += amount
 
+func start_turn():
+	armor = 0 #definicao temporaria
+	# recebe uma carta no inicio do turno
+
+func reset():
+	health = starting_health
+	armor = starting_armor
+
 func _ready() -> void:
-	set_health_value(health)
+	reset()
 
 func _process(delta: float) -> void:
 	update_health_value()
