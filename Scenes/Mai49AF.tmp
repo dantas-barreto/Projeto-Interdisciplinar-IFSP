@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b38wveyi7a4c7" path="res://Scenes/DeckInHand.tscn" id="1_v0gtk"]
 [ext_resource type="Script" path="res://Scripts/game_controller.gd" id="2_rb38j"]
 [ext_resource type="Texture2D" uid="uid://c1ptdhrdpy5r" path="res://Sprites/cards/arena.jpg" id="4_42njd"]
-[ext_resource type="PackedScene" uid="uid://cq2gw777i7o0q" path="res://Scenes/ui/PlayableDeckUI.tscn" id="6_gb1vt"]
+[ext_resource type="PackedScene" uid="uid://cq2gw777i7o0q" path="res://Scenes/ui/PlayableDeckUi.tscn" id="6_iefbe"]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("player_character")]
 script = ExtResource("1_1kloo")
@@ -59,14 +59,13 @@ offset_right = 147.0
 offset_bottom = 831.0
 text = "Deck"
 
-[node name="PlayableDeckUi" parent="." instance=ExtResource("6_gb1vt")]
-offset_left = 46.0
-offset_top = 689.0
-offset_right = 526.0
-offset_bottom = 1329.0
-scale = Vector2(0.3, 0.3)
+[node name="PlayableDeckUi" parent="." instance=ExtResource("6_iefbe")]
+offset_left = 390.0
+offset_top = 175.0
+offset_right = 870.0
+offset_bottom = 815.0
 
+[connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
-[connection signal="pressed" from="PlayableDeckUi" to="." method="_on_playable_deck_ui_pressed"]

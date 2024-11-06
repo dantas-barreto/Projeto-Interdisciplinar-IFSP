@@ -3,8 +3,7 @@ class_name GameController extends Node2D
 enum GameState{
 	PLAYER_TURN,
 	ENEMY_TURN,
-	PLAYER_ATTACK_TURN,
-	ENEMY_ATTACK_TURN,
+	COMBAT_TURN,
 	GAME0VER,
 	VICTORY
 }
@@ -17,9 +16,7 @@ func transition(next_state: GameState):
 			pass
 		GameState.ENEMY_TURN:
 			pass
-		GameState.PLAYER_ATTACK_TURN:
-			pass
-		GameState.ENEMY_ATTACK_TURN:
+		GameState.COMBAT_TURN:
 			pass
 		GameState.GAME0VER:
 			pass
@@ -33,9 +30,7 @@ func transition(next_state: GameState):
 			pass
 		GameState.ENEMY_TURN:
 			pass
-		GameState.PLAYER_ATTACK_TURN:
-			pass
-		GameState.ENEMY_ATTACK_TURN:
+		GameState.COMBAT_TURN:
 			pass
 		GameState.GAME0VER:
 			pass

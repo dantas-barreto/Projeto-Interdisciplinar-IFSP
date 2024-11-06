@@ -2,12 +2,26 @@ extends Node2D
 
 @export var player_character: Character
 
+@export var debug_mode: bool = true:
+	set(value):
+		if !is_node_ready():
+			await ready
+
+		debug_mode = value
+		$InflictOneButton.visible = debug_mode
+		$InflictThreeButton.visible = debug_mode
+		#$DeckNHand.debug_mode = debug_mode
+
 @onready var game_control:GameController = $GameController
 @onready var deck_in_hand: Node2D = $DeckInHand
+@onready var deck_ui: PlayableDeckUI = $PlayableDeckUi
+
+@onready var player_deck : Deck = Deck.new()
 
 var enemy_state: int = 0
 
 func _ready() -> void:
+	$DeckInHand.deck = player_deck
 	pass
 
 func _process(delta: float) -> void:
@@ -55,3 +69,9 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 	"caster": $MainScreen/PlayerCharacter,
 	"targets": $MainScreen/EnemyCharacter
 	})
+
+
+func _on_playable_deck_ui_pressed() -> void:
+	var card_with_id = deck_ui.draw()
+	$DeckInHand.add_card(card_with_id)
+	pass # Replace with function body.

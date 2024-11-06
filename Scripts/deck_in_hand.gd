@@ -2,6 +2,17 @@ extends Node2D
 
 signal card_activated(card: UsableCard)
 
+@export var deck: Deck
+@export var debug_mode: bool =  true:
+	set(value):
+		if !is_node_ready():
+			await ready
+
+		debug_mode = value
+		$Button.visible = debug_mode
+		$Button2.visible = debug_mode
+		$Button3.visible = debug_mode
+
 @onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/AttackCard.tscn")
 @onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/RevivifyCard.tscn")
 @onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/DefendCard.tscn")
@@ -17,17 +28,20 @@ func _ready():
 func _process(delta):
 	pass
 
+func add_card(card_with_id: CardWithID):
+	$Hand.add_card(card_with_id.card)
+
 func _on_attack_pressed():
 	var attackCard = attackCardScene.instantiate()
-	hand.add_card(attackCard)
+	deck.add_card(attackCard)
 
 func _on_revivify_pressed():
 	var revivifyCard = revivifyCardScene.instantiate()
-	hand.add_card(revivifyCard)
+	deck.add_card(revivifyCard)
 
 func _on_defend_pressed() -> void:
 	var defendCard = defendCardScene.instantiate()
-	hand.add_card(defendCard)
+	deck.add_card(defendCard)
 
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
 	if(card.gettype() == "spell"):

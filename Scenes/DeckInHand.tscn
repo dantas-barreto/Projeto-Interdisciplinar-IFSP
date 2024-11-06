@@ -6,6 +6,7 @@
 
 [node name="DeckInHand" type="Node2D"]
 script = ExtResource("1_on1vr")
+debug_mode = null
 
 [node name="Table" parent="." instance=ExtResource("2_wm37q")]
 position = Vector2(800, 550)

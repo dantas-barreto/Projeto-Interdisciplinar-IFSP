@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq2gw777i7o0q"]
+
+[ext_resource type="Texture2D" uid="uid://bssp5qv42snjl" path="res://Sprites/BackSideCard.png" id="1_8ydue"]
+[ext_resource type="Texture2D" uid="uid://dsu6gxuxcdgcs" path="res://Sprites/BaseCard.png" id="2_2ukml"]
+[ext_resource type="Script" path="res://Scripts/ui/playable_deck_ui.gd" id="3_nguoe"]
+
+[node name="PlayableDeckUi" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.3
+anchor_bottom = 0.711
+offset_right = -480.0
+offset_bottom = -639.9
+texture_normal = ExtResource("1_8ydue")
+texture_pressed = ExtResource("2_2ukml")
+script = ExtResource("3_nguoe")
