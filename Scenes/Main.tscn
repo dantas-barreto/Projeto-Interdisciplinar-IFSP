@@ -83,14 +83,10 @@ texture = ExtResource("4_42njd")
 [node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
 position = Vector2(300, 810)
 scale = Vector2(1.5, 1.5)
-starting_health = null
-starting_armor = null
 
 [node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
 position = Vector2(1300, 90)
 scale = Vector2(1.5, 1.5)
-starting_health = null
-starting_armor = null
 
 [node name="Inflict1Damage" type="Button" parent="."]
 offset_left = 2.0

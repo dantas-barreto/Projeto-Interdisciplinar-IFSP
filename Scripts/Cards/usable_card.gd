@@ -23,6 +23,12 @@ func get_type():
 func get_cost():
 	return $Card.get_cost()
 
+func get_attack():
+	return $Card.get_attack()
+
+func get_defense():
+	return $Card.get_defense()
+
 func _on_card_mouse_entered(card: Card):
 	mouse_entered.emit(self)
  

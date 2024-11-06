@@ -2,11 +2,13 @@ extends Node2D
 
 signal card_activated(card: UsableCard)
 
-@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/AttackCard.tscn")
-@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/RevivifyCard.tscn")
-@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/DefendCard.tscn")
+@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/AttackCard.tscn")
+@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
+@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
 
-@onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Fireball.tscn")
+@onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Spells/Fireball.tscn")
+
+@onready var flameTowerCardScene: PackedScene = preload("res://Scenes/Cards/Structures/FlameTower.tscn")
 
 @onready var table: Table = $Table
 @onready var hand: Hand = $Hand

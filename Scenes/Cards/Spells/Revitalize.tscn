@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgijekgjc1tyk"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/revitalize_action.gd" id="1_b1tsi"]
+[ext_resource type="Script" path="res://Scripts/Cards/Spells/revitalize_action.gd" id="1_b1tsi"]
 [ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_cidj7"]
 [ext_resource type="Texture2D" uid="uid://qgpx6mgnqh7s" path="res://Sprites/cards/water/revitalizar.jpg" id="2_1fyk3"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_mdwpk"]

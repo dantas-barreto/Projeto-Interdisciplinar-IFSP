@@ -64,6 +64,47 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Attributes" type="Node2D" parent="."]
+
+[node name="AttackLabel" type="Label" parent="Attributes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -225.0
+offset_top = 270.0
+offset_right = -204.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("4_p578d")
+
+[node name="DivisionLabel" type="Label" parent="Attributes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = 270.0
+offset_right = -179.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "/"
+label_settings = ExtResource("4_p578d")
+
+[node name="DefenseLabel" type="Label" parent="Attributes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -175.0
+offset_top = 270.0
+offset_right = -154.0
+offset_bottom = 309.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "0"
+label_settings = ExtResource("4_p578d")
+
 [node name="Area2D" type="Area2D" parent="."]
 modulate = Color(1, 0.5875, 0.25, 1)
 
