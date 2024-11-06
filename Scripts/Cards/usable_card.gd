@@ -17,11 +17,17 @@ func highlight():
 func unhighlight():
 	$Card.unhighlight()
 
-func gettype():
+func get_type():
 	return $Card.get_type()
 
-func getCost():
+func get_cost():
 	return $Card.get_cost()
+
+func get_attack():
+	return $Card.get_attack()
+
+func get_defense():
+	return $Card.get_defense()
 
 func _on_card_mouse_entered(card: Card):
 	mouse_entered.emit(self)

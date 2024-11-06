@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_erpos"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_poy5a"]
 [ext_resource type="Texture2D" uid="uid://dlnoqhfme3kmj" path="res://Sprites/icon.svg" id="3_ser78"]
-[ext_resource type="Script" path="res://Scripts/Cards/revivify_action.gd" id="4_hxpj3"]
+[ext_resource type="Script" path="res://Scripts/Cards/Debug/revivify_action.gd" id="4_hxpj3"]
 
 [node name="RevivifyCard" type="Node2D" node_paths=PackedStringArray("action")]
 scale = Vector2(0.5, 0.5)

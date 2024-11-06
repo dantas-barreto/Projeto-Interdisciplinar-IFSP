@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://mill21nvmf3h"]
+
+[ext_resource type="Texture2D" uid="uid://c1dblwsho82k0" path="res://Sprites/cards/earth/fortaleza.jpg" id="1_xf6vr"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="2_pr6cl"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="3_qa7iw"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/fortress_action.gd" id="4_5sigl"]
+
+[node name="Fortress" type="Node2D"]
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
+texture = ExtResource("1_xf6vr")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("2_pr6cl")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("3_qa7iw")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Fortress"
+card_description = "Defense: You gain 1 shield per turn"
+card_cost = 4
+card_defense = 8
+card_type = "structure"
+
+[node name="FortressAction" type="Node2D" parent="."]
+script = ExtResource("4_5sigl")

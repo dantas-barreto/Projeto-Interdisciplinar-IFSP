@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://ddiyde6enub2x"]
+
+[ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="1_inlis"]
+
+[resource]
+font = ExtResource("1_inlis")
+font_size = 100
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(3, 3)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://u2qqqih0nnv3"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/on_fire.gd" id="1_vj4rx"]
+[ext_resource type="Script" path="res://Scripts/Cards/Spells/on_fire.gd" id="1_vj4rx"]
 [ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_x5aaq"]
 [ext_resource type="Texture2D" uid="uid://co44yr8i235ig" path="res://Sprites/cards/fire/em_chamas.jpg" id="2_jgcrm"]
 [ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_5o6kt"]

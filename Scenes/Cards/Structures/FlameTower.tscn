@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cphp6g3cjrbic"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_pplje"]
+[ext_resource type="Texture2D" uid="uid://cowmb0mrg6a2y" path="res://Sprites/cards/fire/torre_de_fogo.jpg" id="2_ydk25"]
+[ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_v31m5"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_xi0cw"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/flame_tower_action.gd" id="5_i6wke"]
+
+[node name="FlameTower" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_pplje")
+action = NodePath("FlameTowerAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_ydk25")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_v31m5")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_xi0cw")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Flame Tower"
+card_description = "Burn: Enemy creatures get 1 damage per turn"
+card_cost = 4
+card_defense = 4
+card_type = "structure"
+
+[node name="FlameTowerAction" type="Node2D" parent="."]
+script = ExtResource("5_i6wke")

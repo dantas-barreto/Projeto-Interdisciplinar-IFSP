@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g7domnb2u781" path="res://Sprites/cards/fire/enfurecer.jpg" id="2_krlth"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_w787h"]
 [ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_6qnfe"]
-[ext_resource type="Script" path="res://Scripts/Cards/rage_action.gd" id="3_in2se"]
+[ext_resource type="Script" path="res://Scripts/Cards/Spells/rage_action.gd" id="3_in2se"]
 
 [node name="Rage" type="Node2D" node_paths=PackedStringArray("action")]
 script = ExtResource("1_m2enc")

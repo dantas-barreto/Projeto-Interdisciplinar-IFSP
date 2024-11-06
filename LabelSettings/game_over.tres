@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://di3usyojom3jf"]
+
+[ext_resource type="FontFile" uid="uid://c1u53jbejtdii" path="res://Fonts/ProggyCleanCENerdFont-Regular.ttf" id="1_6algr"]
+
+[resource]
+font = ExtResource("1_6algr")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.392157)
+shadow_offset = Vector2(3, 3)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cvlogn5m65toi" path="res://Sprites/cards/water/agua_da_vida.jpg" id="2_m6teu"]
 [ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_jc6cb"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_rc183"]
-[ext_resource type="Script" path="res://Scripts/Cards/water_of_life_action.gd" id="5_ayv6e"]
+[ext_resource type="Script" path="res://Scripts/Cards/Spells/water_of_life_action.gd" id="5_ayv6e"]
 
 [node name="WaterOfLife" type="Node2D" node_paths=PackedStringArray("action")]
 script = ExtResource("1_lvxd3")

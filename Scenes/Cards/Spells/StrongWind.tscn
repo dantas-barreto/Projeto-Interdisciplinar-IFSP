@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdmv3flfdan5m" path="res://Sprites/cards/air/ventos_fortes.jpg" id="2_mhb4d"]
 [ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_teal1"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_evaap"]
-[ext_resource type="Script" path="res://Scripts/Cards/strong_wind_action.gd" id="5_cu6lw"]
+[ext_resource type="Script" path="res://Scripts/Cards/Spells/strong_wind_action.gd" id="5_cu6lw"]
 
 [node name="StrongWind" type="Node2D" node_paths=PackedStringArray("action")]
 script = ExtResource("1_gqxm2")
