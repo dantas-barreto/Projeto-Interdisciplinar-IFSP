@@ -9,7 +9,10 @@ func draw_card() -> CardWithID:
 # Shuffle the order of cards in the deck
 func shuffle():
 	cards.shuffle()
-	
+
+func is_empty():
+	return cards.is_empty()
+
 func peek_top() -> CardWithID:
 	return cards.back()
 	

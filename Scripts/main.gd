@@ -2,15 +2,7 @@ extends Node2D
 
 @export var player_character: Character
 
-@export var debug_mode: bool = true:
-	set(value):
-		if !is_node_ready():
-			await ready
 
-		debug_mode = value
-		$InflictOneButton.visible = debug_mode
-		$InflictThreeButton.visible = debug_mode
-		#$DeckNHand.debug_mode = debug_mode
 
 @onready var game_control:GameController = $GameController
 @onready var deck_in_hand: Node2D = $DeckInHand
@@ -26,11 +18,12 @@ func restart_game():
 	game_control.current_state = GameController.GameState.PLAYER_TURN
 	$MainScreen/PlayerCharacter.reset()
 	$MainScreen/EnemyCharacter.reset()
-	$DeckInHand.reset()
+	deck_in_hand.reset()
+	deck_ui.deck = player_deck.get_playable_deck()
 
 func _ready() -> void:
-	$DeckInHand.deck = player_deck
-	pass
+	deck_in_hand.deck = player_deck
+	deck_ui.deck = player_deck.get_playable_deck()
 
 func _process(delta: float) -> void:
 	
@@ -131,16 +124,8 @@ func _on_end_turn_pressed() -> void:
 		$MainScreen/EnemyCharacter.start_turn()
 
 
-func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
-	var card_cost: int = card.getCost()
-	card.activate({
-	"caster": $MainScreen/PlayerCharacter,
-	"targets": $MainScreen/EnemyCharacter
-	})
-
-
 func _on_playable_deck_ui_pressed() -> void:
-	var card_with_id = deck_ui.draw()
-	$DeckInHand.add_card(card_with_id)
-	pass # Replace with function body.
-		
+	if(!deck_ui.is_empty()):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b4kxd1afo5m68"]
+[gd_scene load_steps=9 format=3 uid="uid://b4kxd1afo5m68"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_1kloo"]
 [ext_resource type="PackedScene" uid="uid://fic5xepe6wyd" path="res://Scenes/Character.tscn" id="1_fwshs"]
@@ -124,6 +124,7 @@ offset_right = 526.0
 offset_bottom = 1329.0
 scale = Vector2(0.3, 0.3)
 
+[connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

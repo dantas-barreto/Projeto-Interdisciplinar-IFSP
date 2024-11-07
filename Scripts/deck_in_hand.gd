@@ -3,19 +3,8 @@ extends Node2D
 signal card_activated(card: UsableCard)
 
 @export var deck: Deck
-@export var debug_mode: bool =  true:
-	set(value):
-		if !is_node_ready():
-			await ready
 
-		debug_mode = value
-		$Button.visible = debug_mode
-		$Button2.visible = debug_mode
-		$Button3.visible = debug_mode
 
-@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/AttackCard.tscn")
-@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/RevivifyCard.tscn")
-@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/DefendCard.tscn")
 @onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/AttackCard.tscn")
 @onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
 @onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
@@ -35,6 +24,7 @@ func _process(delta):
 
 func add_card(card_with_id: CardWithID):
 	$Hand.add_card(card_with_id.card)
+
 func reset():
 	$Hand.empty_hand()
 

@@ -3,7 +3,7 @@ class_name Deck extends Resource
 var card_collection: Dictionary = {}
 var id_counter: int = 0
 
-func add_card(card: CardData):
+func add_card(card):
 	var card_id = _generate_card_id(card)
 	card_collection[card_id] = CardWithID.new(card_id, card)
 	id_counter += 1
@@ -11,7 +11,7 @@ func add_card(card: CardData):
 func remove_card(card_id: int):
 	card_collection.erase(card_id)
 
-func update_card(card_id: String, card: CardData):
+func update_card(card_id: String, card):
 	card_collection[card_id] = card
 
 func get_cards() -> Array[CardWithID]:
@@ -28,5 +28,5 @@ func get_playable_deck() -> PlayableDeck:
 	playable_deck.cards = get_cards()
 	return playable_deck
 
-func _generate_card_id(card: CardData):
+func _generate_card_id(card):
 	return id_counter
