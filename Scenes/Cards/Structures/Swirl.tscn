@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctwolp7qwke2c"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_3bv31"]
+[ext_resource type="Texture2D" uid="uid://c1xnpewct6nr3" path="res://Sprites/cards/water/redemoinho.jpg" id="2_cybq2"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_coerp"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_l8tbn"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/swirl_action.gd" id="5_h1v0h"]
+
+[node name="Swirl" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_3bv31")
+action = NodePath("SwirlAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_cybq2")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_coerp")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_l8tbn")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Swirl"
+card_description = "Buy +1 card per turn"
+card_cost = 2
+card_defense = 2
+card_type = "structure"
+
+[node name="SwirlAction" type="Node2D" parent="."]
+script = ExtResource("5_h1v0h")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://vjhgtb56ps4b"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_5its6"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_7vdcg"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/flame_fortress_action.gd" id="2_0cu7l"]
+[ext_resource type="Texture2D" uid="uid://smomgsjp30ru" path="res://Sprites/cards/fire/fortaleza_de_chamas.jpg" id="2_7suus"]
+[ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_tfgla"]
+
+[node name="FlameFortress" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_5its6")
+action = NodePath("FlameFortressAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_7suus")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_tfgla")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("1_7vdcg")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Flame Fortress"
+card_description = "Burn 1        Health Pool 1"
+card_cost = 3
+card_defense = 1
+card_type = "structure"
+
+[node name="FlameFortressAction" type="Node2D" parent="."]
+script = ExtResource("2_0cu7l")
