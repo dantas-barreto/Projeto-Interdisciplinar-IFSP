@@ -1,10 +1,9 @@
-class_name Deck extends RefCounted
+class_name Deck extends Resource
 
 var card_collection: Dictionary = {}
-
 var id_counter: int = 0
 
-func add_card(card: UsableCard):
+func add_card(card):
 	var card_id = _generate_card_id(card)
 	card_collection[card_id] = CardWithID.new(card_id, card)
 	id_counter += 1
@@ -12,11 +11,22 @@ func add_card(card: UsableCard):
 func remove_card(card_id: int):
 	card_collection.erase(card_id)
 
-func update_card(card_id: String, card: UsableCard):
+func update_card(card_id: String, card):
 	card_collection[card_id] = card
 
 func get_cards() -> Array[CardWithID]:
-	return card_collection.values()
+	var cards: Array[CardWithID] = []
+	if !card_collection.is_empty():
+		for card in card_collection.values():
+			var duplicate_card_with_id: CardWithID = CardWithID.new(card.id, card.card.duplicate())
+			cards.push_back(duplicate_card_with_id)
+	
+	return cards
 
-func _generate_card_id(card: UsableCard):
+func get_playable_deck() -> PlayableDeck:
+	var playable_deck = PlayableDeck.new()
+	playable_deck.cards = get_cards()
+	return playable_deck
+
+func _generate_card_id(card):
 	return id_counter

@@ -10,10 +10,9 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_jew8j")
 action = NodePath("DefendAction")
 
-[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("1_ys3u3")]
+[node name="Card" parent="." instance=ExtResource("1_ys3u3")]
 card_name = "HardShell Godot"
 card_description = "Defend 1"
-card_image = NodePath("../CardSprite")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -40)
