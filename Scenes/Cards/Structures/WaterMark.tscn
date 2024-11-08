@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://g6s5bnwjafrg"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_b2rp4"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_h87ex"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/water_mark_action.gd" id="2_85ddy"]
+[ext_resource type="Texture2D" uid="uid://cjok0ydqcd8je" path="res://Sprites/cards/water/marca_da_agua.jpg" id="2_xk7to"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_rsv7s"]
+
+[node name="WaterMark" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_b2rp4")
+action = NodePath("WaterMarkAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("2_xk7to")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_rsv7s")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("1_h87ex")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Water Mark"
+card_description = "Your creatures get +1 hp"
+card_cost = 2
+card_defense = 1
+card_type = "structure"
+
+[node name="WaterMarkAction" type="Node2D" parent="."]
+script = ExtResource("2_85ddy")

@@ -9,9 +9,13 @@ signal card_activated(card: UsableCard)
 @onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
 @onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
 
-@onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Spells/Fireball.tscn")
+# Spells
+#@onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Spells/Fireball.tscn")
 
-@onready var flameTowerCardScene: PackedScene = preload("res://Scenes/Cards/Structures/FlameTower.tscn")
+# Structures
+#@onready var flameTowerCardScene: PackedScene = preload("res://Scenes/Cards/Structures/FlameTower.tscn")
+
+# Creatures
 
 @onready var table: Table = $Table
 @onready var hand: Hand = $Hand

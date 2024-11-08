@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c86llyicas1jj"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_mjf84"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_6jqed"]
+[ext_resource type="Texture2D" uid="uid://b4pb13ccjb38g" path="res://Sprites/cards/earth/pedra_de_mana.jpg" id="2_6lq88"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_7p6ec"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/health_stone_action.gd" id="3_p4enl"]
+
+[node name="HealthStone" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_mjf84")
+action = NodePath("HealthStoneAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_6lq88")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_7p6ec")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_6jqed")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Health Stone"
+card_description = "Health Pool 1"
+card_cost = 2
+card_defense = 2
+
+[node name="HealthStoneAction" type="Node2D" parent="."]
+script = ExtResource("3_p4enl")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://fjv8uipas3lu"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_0du88"]
+[ext_resource type="Texture2D" uid="uid://bhjrv0y81s0rb" path="res://Sprites/cards/earth/alma_da_terra.jpg" id="2_juh4i"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_1jagb"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_o1n67"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/earth_soul_action.gd" id="5_la5g6"]
+
+[node name="EarthSoul" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_0du88")
+action = NodePath("EarthSoulAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
+texture = ExtResource("2_juh4i")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_1jagb")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_o1n67")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Earth Soul"
+card_description = "Defense 1"
+card_cost = 2
+card_defense = 2
+card_type = "structure"
+
+[node name="EarthSoulAction" type="Node2D" parent="."]
+script = ExtResource("5_la5g6")

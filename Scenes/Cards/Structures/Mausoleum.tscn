@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdfq6ufs0c3od"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_jawyi"]
+[ext_resource type="Texture2D" uid="uid://chnnasjfblwxf" path="res://Sprites/cards/earth/mausoleu_de_mana.jpg" id="2_igtgg"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_wnhvy"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_buy1t"]
+[ext_resource type="Script" path="res://Scripts/Cards/Structures/mausoleum_action.gd" id="5_67rfs"]
+
+[node name="Mausoleum" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_jawyi")
+action = NodePath("MausoleumAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_igtgg")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_buy1t")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_wnhvy")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Mausoleum"
+card_description = "Defence 4"
+card_cost = 7
+card_defense = 2
+card_type = "structure"
+
+[node name="MausoleumAction" type="Node2D" parent="."]
+script = ExtResource("5_67rfs")
