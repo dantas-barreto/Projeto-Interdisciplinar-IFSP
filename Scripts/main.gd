@@ -88,13 +88,35 @@ func _process(delta: float) -> void:
 			$MainScreen/EnemyCharacter.add_armor(1)
 			$MainScreen/EnemyCharacter.add_health(4)
 		
-		enemy_state = rng.randi_range(10, 19)
+		enemy_state = rng.randi_range(0, 9)
+		game_control.transition(GameController.GameState.ATTACK_TURN)
+		for creature in player_deck_in_hand.table.table:
+			creature.attack({
+			"caster": $MainScreen/PlayerCharacter,
+			"your_monster": player_deck_in_hand.table.table,
+			"targets": enemy_deck_in_hand.table.table,
+			"enemy": $MainScreen/EnemyCharacter
+			})
+		for creature in enemy_deck_in_hand.table.table:
+			creature.attack({
+			"caster": $MainScreen/EnemyCharacter,
+			"your_monster": enemy_deck_in_hand.table.table,
+			"targets": player_deck_in_hand.table.table,
+			"enemy": $MainScreen/PlayerCharacter
+			})
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 		if(!deck_ui.is_empty()):
 			var card_with_id = deck_ui.draw()
 			player_deck_in_hand.add_card(card_with_id)
 		for structure in player_deck_in_hand.table.structures:
 			structure.activate_in_play({
+			"caster": $MainScreen/PlayerCharacter,
+			"your_monster": player_deck_in_hand.table.table,
+			"targets": enemy_deck_in_hand.table.table,
+			"enemy": $MainScreen/EnemyCharacter
+			})
+		for creature in player_deck_in_hand.table.table:
+			creature.activate_in_play({
 			"caster": $MainScreen/PlayerCharacter,
 			"your_monster": player_deck_in_hand.table.table,
 			"targets": enemy_deck_in_hand.table.table,
@@ -210,8 +232,9 @@ func _on_deck_in_hand_starting() -> void:
 
 func _on_player_character_add_discard(type) -> void:
 	if(type == "add"):
-		var card_with_id = deck_ui.draw()
-		player_deck_in_hand.add_card(card_with_id)
+		if(!deck_ui.is_empty()):
+			var card_with_id = deck_ui.draw()
+			player_deck_in_hand.add_card(card_with_id)
 	else:
 		player_deck_in_hand.removeRandomCard()
 
