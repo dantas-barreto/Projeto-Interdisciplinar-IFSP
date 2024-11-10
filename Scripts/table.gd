@@ -23,7 +23,7 @@ func add_card(card: Node2D):
 	card.mouse_exited.connect(_handle_card_untouched)
 	reposition_cards()
 
-func add_strcture(card: Node2D):
+func add_structure(card: Node2D):
 	structures.push_back(card)
 	add_child(card)
 

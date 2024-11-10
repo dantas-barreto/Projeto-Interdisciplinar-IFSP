@@ -65,6 +65,12 @@ func get_defense() -> int:
 func activate():
 	pass
 
+func add_armor(amount) -> void:
+	card_defense += amount
+
+func dont_attack():
+	card_attack = 0
+
 func _process(delta):
 	_update_graphics()
 
