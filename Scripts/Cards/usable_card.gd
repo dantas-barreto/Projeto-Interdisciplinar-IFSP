@@ -29,6 +29,12 @@ func get_attack():
 func get_defense():
 	return $Card.get_defense()
 
+func dont_attack():
+	$Card.dont_attack()
+
+func add_armor(amount):
+	$Card.add_armor(amount)
+
 func _on_mouse_entered(card: Card) -> void:
 	mouse_entered.emit(self)
 
@@ -38,6 +44,9 @@ func _on_mouse_exited(card: Card) -> void:
 
 func activate(game_state: Dictionary):
 	action.activate(game_state)
+
+func activate_in_play(game_state: Dictionary):
+	action.activate_in_play(game_state)
 
 func _on_card_mouse_entered(card: Card) -> void:
 	mouse_entered.emit(self)
