@@ -11,12 +11,22 @@ script = ExtResource("1_t1qj8")
 action = NodePath("AirGolemAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241936, 0.25)
 texture = ExtResource("2_bwrvq")
 
 [node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
 texture = ExtResource("3_oju2e")
 
-[node name="Card" parent="." instance=ExtResource("4_bgpvd")]
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_bgpvd")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Air Golem"
+card_description = "Wind,         Double Attack"
+card_cost = 3
+card_attack = 4
+card_defense = 2
+card_type = "creature"
 
 [node name="AirGolemAction" type="Node2D" parent="."]
 script = ExtResource("5_p0wqc")

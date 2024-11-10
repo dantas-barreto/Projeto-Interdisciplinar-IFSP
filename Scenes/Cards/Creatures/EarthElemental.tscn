@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7qptyi5jorm3"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_cta8x"]
+[ext_resource type="Texture2D" uid="uid://c885j06v7daf0" path="res://Sprites/cards/earth/elemental_de_terra.jpg" id="2_s7igx"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_b5rha"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_eqjj5"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/earth_elemental_action.gd" id="5_j8pfs"]
+
+[node name="EarthElemental" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_cta8x")
+action = NodePath("EarthElementalAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_s7igx")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_b5rha")
+
+[node name="Card" parent="." instance=ExtResource("4_eqjj5")]
+
+[node name="EarthElementalAction" type="Node2D" parent="."]
+script = ExtResource("5_j8pfs")
