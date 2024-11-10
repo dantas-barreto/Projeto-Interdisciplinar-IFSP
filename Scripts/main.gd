@@ -12,8 +12,6 @@ extends Node2D
 
 var rng = RandomNumberGenerator.new()
 
-var enemy_state: int = rng.randi_range(0, 9)
-
 var objective: int = 0
 var amount_objective: int = 0
 var objective_card
@@ -49,46 +47,16 @@ func _process(delta: float) -> void:
 		game_control.transition(GameController.GameState.VICTORY)
 	
 	if game_control.current_state == GameController.GameState.ENEMY_TURN:
-		if enemy_state == 0:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(3)
-		if enemy_state == 1:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/EnemyCharacter.add_armor(3)
-		if enemy_state == 2:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/EnemyCharacter.add_health(6)
-		if enemy_state == 3:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(1)
-			$MainScreen/EnemyCharacter.add_armor(1)
-			$MainScreen/EnemyCharacter.add_health(2)
-		if enemy_state == 4:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(2)
-			$MainScreen/EnemyCharacter.add_armor(1)
-		if enemy_state == 5:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(2)
-			$MainScreen/EnemyCharacter.add_health(2)
-		if enemy_state == 6:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(1)
-			$MainScreen/EnemyCharacter.add_armor(2)
-		if enemy_state == 7:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/EnemyCharacter.add_armor(2)
-			$MainScreen/EnemyCharacter.add_health(2)
-		if enemy_state == 8:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/PlayerCharacter.take_damage(1)
-			$MainScreen/EnemyCharacter.add_health(4)
-		if enemy_state == 9:
-			$MainScreen/EnemyCharacter.spend_health(3)
-			$MainScreen/EnemyCharacter.add_armor(1)
-			$MainScreen/EnemyCharacter.add_health(4)
+		for i in 3:
+			var choosed_card: UsableCard = enemy_deck_in_hand.hand.hand[rng.randi_range(0, enemy_deck_in_hand.hand.hand.size() - 1)]
+			choosed_card.activate({
+				"caster": $MainScreen/EnemyCharacter,
+				"your_monster": enemy_deck_in_hand.table.table,
+				"targets": player_deck_in_hand.table.table,
+				"enemy": $MainScreen/PlayerCharacter,
+				"objective": objective_card
+			})
 		
-		enemy_state = rng.randi_range(0, 9)
 		game_control.transition(GameController.GameState.ATTACK_TURN)
 		for creature in player_deck_in_hand.table.table:
 			creature.attack({
@@ -245,7 +213,6 @@ func _on_start_button_pressed() -> void:
 	enemy_deck_in_hand.start()
 	
 	_on_deck_in_hand_starting()
-
 
 func _on_player_deck_in_hand_objective(objective_type_card) -> void:
 	objective = objective_type_card.type

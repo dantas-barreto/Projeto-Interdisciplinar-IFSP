@@ -3,10 +3,10 @@ class_name Character extends Node2D
 
 signal add_discard
 
-@export var starting_health: int = 20
+@export var starting_health: int = 50
 @export var starting_armor: int = 0
 
-var health = 20
+var health = 50
 var armor = 0
 
 @onready var health_label: Label = $Sprite2D/HealthLabel
