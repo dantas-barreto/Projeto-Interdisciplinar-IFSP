@@ -12,7 +12,14 @@ func activate_in_play(game_state: Dictionary):
 	
 	defense(caster)
 
+func attack(game_state: Dictionary, card_attack: int):
+	var caster: Character = game_state.get("caster")
+	var your_monster: Array = game_state.get("your_monster")
+	var targets: Array = game_state.get("targets")
+	var enemy: Character = game_state.get("enemy")
+	
+	enemy.take_damage(card_attack)
+	enemy.take_damage(card_attack)
+
 func defense(player: Character) -> void:
 	player.add_armor(2)
-
-# fazer um if no main pra chamar o ataque da carta duas vezes

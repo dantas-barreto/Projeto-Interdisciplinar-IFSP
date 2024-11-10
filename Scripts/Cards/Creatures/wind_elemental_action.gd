@@ -14,6 +14,14 @@ func activate_in_play(game_state: Dictionary):
 	if(!targets.is_empty()):
 		wind(targets[0])
 
+func attack(game_state: Dictionary, card_attack: int):
+	var caster: Character = game_state.get("caster")
+	var your_monster: Array = game_state.get("your_monster")
+	var targets: Array = game_state.get("targets")
+	var enemy: Character = game_state.get("enemy")
+	
+	enemy.take_damage(card_attack)
+
 func wind(creature: UsableCard):
 	creature.dont_attack()
 

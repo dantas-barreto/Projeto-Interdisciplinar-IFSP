@@ -51,7 +51,7 @@ func activate_in_play(game_state: Dictionary):
 	action.activate_in_play(game_state)
 
 func attack(game_state: Dictionary):
-	action.attack(game_state)
+	action.attack(game_state, $Card.card_attack)
 
 func _on_card_mouse_entered(card: Card) -> void:
 	mouse_entered.emit(self)
