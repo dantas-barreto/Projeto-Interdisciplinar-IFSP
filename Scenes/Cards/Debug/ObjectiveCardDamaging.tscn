@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://fjugyi7q24yw"]
+[gd_scene load_steps=6 format=3 uid="uid://nq5ymdoi2ld3"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_mmwgd"]
-[ext_resource type="Texture2D" uid="uid://dvt18v0l5ew4o" path="res://Sprites/cards/backside.jpg" id="2_cjmqw"]
-[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_l8psw"]
-[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_aejq1"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_543ce"]
+[ext_resource type="Texture2D" uid="uid://dvt18v0l5ew4o" path="res://Sprites/cards/backside.jpg" id="2_wkkft"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_76qha"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_754oi"]
 
 [sub_resource type="GDScript" id="GDScript_i845g"]
 script/source = "extends Node2D
@@ -14,19 +14,19 @@ func activate(game_state: Dictionary):
 "
 
 [node name="Objective" type="Node2D" node_paths=PackedStringArray("action")]
-script = ExtResource("1_mmwgd")
+script = ExtResource("1_543ce")
 action = NodePath("ObjectiveAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -3.8147e-06)
 scale = Vector2(0.241935, 0.25)
-texture = ExtResource("2_cjmqw")
+texture = ExtResource("2_wkkft")
 
 [node name="FrameCardSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.193548, 0.2)
-texture = ExtResource("3_l8psw")
+texture = ExtResource("3_76qha")
 
-[node name="Card" parent="." instance=ExtResource("4_aejq1")]
+[node name="Card" parent="." instance=ExtResource("4_754oi")]
 card_name = "Furious Godot"
 card_description = "Attack 1"
 card_type = "objective"

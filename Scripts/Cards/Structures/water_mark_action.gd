@@ -13,5 +13,6 @@ func activate_in_play(game_state: Dictionary):
 	buffAll(1, your_monster)
 
 func buffAll(buff_defense: int, creatures: Array):
-	for creature in creatures:
-		creature.defense = buff_defense
+	for i in creatures:
+		var creature: UsableCard = creatures[i]
+		creature.add_armor(buff_defense)

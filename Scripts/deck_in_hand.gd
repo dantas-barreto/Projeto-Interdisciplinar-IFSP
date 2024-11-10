@@ -3,11 +3,12 @@ extends Node2D
 signal card_activated(card: UsableCard)
 signal table_card_activated(card: UsableCard)
 signal starting
+signal objective
 
 @export var deck: Deck
 
 # debug
-#@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/AttackCard.tscn")
+@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/ObjectiveCard.tscn")
 #@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
 #@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
 
@@ -100,9 +101,9 @@ func start():
 		
 		#creature
 
-#func _on_attack_pressed():
-#	var attackCard = attackCardScene.instantiate()
-#	deck.add_card(attackCard)
+func _on_attack_pressed():
+	var attackCard = attackCardScene.instantiate()
+	objective.emit(attackCard)
 
 #func _on_revivify_pressed():
 #	var revivifyCard = revivifyCardScene.instantiate()
@@ -114,11 +115,10 @@ func start():
 
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
 	hand.remove_card(hand.current_selected_card_index)
-	if(card.get_type() == "spell"):
-		card_activated.emit(card)
-	elif(card.get_type() == "creature"):
+	card_activated.emit(card)
+	if(card.get_type() == "creature"):
 		table.add_card(card)
-	else:
+	elif(card.get_type() == "structure"):
 		table.add_structure(card)
 
 func _on_table_card_activated(card: UsableCard) -> void:

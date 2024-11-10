@@ -14,7 +14,8 @@ func activate_in_play(game_state: Dictionary):
 	health_pool(caster)
 
 func burn(creatures: Array) -> void:
-	for creature in creatures:
+	for i in creatures:
+		var creature: UsableCard = creatures[i]
 		creature.take_damage(1)
 
 func health_pool(player: Character) -> void:

@@ -14,6 +14,10 @@ var rng = RandomNumberGenerator.new()
 
 var enemy_state: int = rng.randi_range(0, 9)
 
+var objective: int = 0
+var amount_objective: int = 0
+var objective_card
+
 func restart_game():
 	game_control.current_state = GameController.GameState.PLAYER_TURN
 	$MainScreen/PlayerCharacter.reset()
@@ -28,6 +32,15 @@ func _ready() -> void:
 	deck_ui.deck = player_deck.get_playable_deck()
 
 func _process(delta: float) -> void:
+	
+	if(objective > 0):
+		if(amount_objective > 3):
+			objective_card.activate({
+			"caster": $MainScreen/PlayerCharacter,
+			"your_monster": player_deck_in_hand.table.table,
+			"targets": enemy_deck_in_hand.table.table,
+			"enemy": $MainScreen/EnemyCharacter
+			})
 	
 	if $MainScreen/PlayerCharacter.health <= 0:
 		game_control.transition(GameController.GameState.GAME0VER)
@@ -109,7 +122,8 @@ func _on_table_card_activated(card: UsableCard) -> void:
 		"caster": $MainScreen/PlayerCharacter,
 		"your_monster": player_deck_in_hand.table.table,
 		"targets": enemy_deck_in_hand.table.table,
-		"enemy": $MainScreen/EnemyCharacter
+		"enemy": $MainScreen/EnemyCharacter,
+		"objective": objective_card
 	})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
 		card.activate({
@@ -206,3 +220,9 @@ func _on_start_button_pressed() -> void:
 	enemy_deck_in_hand.start()
 	
 	_on_deck_in_hand_starting()
+
+
+func _on_player_deck_in_hand_objective(objective_type_card) -> void:
+	objective = objective_type_card.type
+	objective_card = objective_type_card
+	amount_objective = 0

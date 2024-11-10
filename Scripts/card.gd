@@ -68,6 +68,9 @@ func activate():
 func add_armor(amount) -> void:
 	card_defense += amount
 
+func take_damage(amount) -> void:
+	card_defense -= amount
+
 func dont_attack():
 	card_attack = 0
 

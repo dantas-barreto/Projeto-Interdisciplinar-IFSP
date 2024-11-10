@@ -25,6 +25,7 @@ card_name = "Health Stone"
 card_description = "Health Pool 1"
 card_cost = 2
 card_defense = 2
+card_type = "structure"
 
 [node name="HealthStoneAction" type="Node2D" parent="."]
 script = ExtResource("3_p4enl")
