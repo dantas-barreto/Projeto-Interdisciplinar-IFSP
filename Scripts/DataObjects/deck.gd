@@ -26,6 +26,7 @@ func get_cards() -> Array[CardWithID]:
 func get_playable_deck() -> PlayableDeck:
 	var playable_deck = PlayableDeck.new()
 	playable_deck.cards = get_cards()
+	playable_deck.shuffle()
 	return playable_deck
 
 func _generate_card_id(card):

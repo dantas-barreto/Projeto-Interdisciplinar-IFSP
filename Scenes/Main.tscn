@@ -69,6 +69,22 @@ label_settings = ExtResource("3_ctqu4")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="tela de começo" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Começar" type="Button" parent="CanvasLayer/tela de começo"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Começar"
+
 [node name="GameController" type="Node2D" parent="."]
 script = ExtResource("2_rb38j")
 
@@ -119,7 +135,9 @@ offset_right = 526.0
 offset_bottom = 1329.0
 scale = Vector2(0.3, 0.3)
 
+[connection signal="pressed" from="CanvasLayer/tela de começo/Começar" to="." method="_on_começar_pressed"]
 [connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
+[connection signal="starting" from="DeckInHand" to="." method="_on_deck_in_hand_starting"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://mill21nvmf3h"]
 
-[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_du5ro"]
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_v87ho"]
 [ext_resource type="Texture2D" uid="uid://c1dblwsho82k0" path="res://Sprites/cards/earth/fortaleza.jpg" id="1_xf6vr"]
 [ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="2_pr6cl"]
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="3_qa7iw"]
 [ext_resource type="Script" path="res://Scripts/Cards/Structures/fortress_action.gd" id="4_5sigl"]
 
 [node name="Fortress" type="Node2D" node_paths=PackedStringArray("action")]
-script = ExtResource("1_du5ro")
+script = ExtResource("1_v87ho")
 action = NodePath("FortressAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]

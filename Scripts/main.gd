@@ -129,3 +129,12 @@ func _on_playable_deck_ui_pressed() -> void:
 		var card_with_id = deck_ui.draw()
 		deck_in_hand.add_card(card_with_id)
 	pass
+
+
+func _on_começar_pressed() -> void:
+	$"CanvasLayer/tela de começo".visible = false
+	deck_in_hand.start()
+
+
+func _on_deck_in_hand_starting() -> void:
+	deck_ui.deck = player_deck.get_playable_deck()
