@@ -49,13 +49,22 @@ func _process(delta: float) -> void:
 	if game_control.current_state == GameController.GameState.ENEMY_TURN:
 		for i in 3:
 			var choosed_card: UsableCard = enemy_deck_in_hand.hand.hand[rng.randi_range(0, enemy_deck_in_hand.hand.hand.size() - 1)]
-			choosed_card.activate({
-				"caster": $MainScreen/EnemyCharacter,
-				"your_monster": enemy_deck_in_hand.table.table,
-				"targets": player_deck_in_hand.table.table,
-				"enemy": $MainScreen/PlayerCharacter,
-				"objective": objective_card
-			})
+			if choosed_card.get_type() == "spell":
+				choosed_card.activate({
+					"caster": $MainScreen/EnemyCharacter,
+					"your_monster": enemy_deck_in_hand.table.table,
+					"targets": player_deck_in_hand.table.table,
+					"enemy": $MainScreen/PlayerCharacter,
+					"objective": objective_card
+				})
+			if choosed_card.get_type() == "structure" || choosed_card.get_type() == "creature":
+				choosed_card.activate({
+					"caster": $MainScreen/EnemyCharacter,
+					"your_monster": enemy_deck_in_hand.table.table,
+					"targets": player_deck_in_hand.table.table,
+					"enemy": $MainScreen/PlayerCharacter,
+					"objective": objective_card
+				})
 		
 		game_control.transition(GameController.GameState.ATTACK_TURN)
 		for creature in player_deck_in_hand.table.table:
@@ -72,6 +81,7 @@ func _process(delta: float) -> void:
 			"targets": player_deck_in_hand.table.table,
 			"enemy": $MainScreen/PlayerCharacter
 			})
+			
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 		if(!deck_ui.is_empty()):
 			var card_with_id = deck_ui.draw()
