@@ -99,7 +99,6 @@ func start():
 		deck.add_card(waterMark)
 		
 		#creature
-	starting.emit()
 
 func _on_attack_pressed():
 	var attackCard = attackCardScene.instantiate()

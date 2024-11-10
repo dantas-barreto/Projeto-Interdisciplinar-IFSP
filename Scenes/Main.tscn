@@ -141,10 +141,8 @@ scale = Vector2(0.3, 0.3)
 
 [connection signal="pressed" from="CanvasLayer/StartScreen/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="card_activated" from="PlayerDeckInHand" to="." method="_on_deck_in_hand_card_activated"]
-[connection signal="starting" from="PlayerDeckInHand" to="." method="_on_deck_in_hand_starting"]
 [connection signal="table_card_activated" from="PlayerDeckInHand" to="." method="_on_table_card_activated"]
 [connection signal="card_activated" from="EnemyDeckInHand" to="." method="_on_deck_in_hand_card_activated"]
-[connection signal="starting" from="EnemyDeckInHand" to="." method="_on_deck_in_hand_starting"]
 [connection signal="table_card_activated" from="EnemyDeckInHand" to="." method="_on_table_card_activated"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
