@@ -2,8 +2,6 @@ extends Node2D
 
 @export var player_character: Character
 
-
-
 @onready var game_control:GameController = $GameController
 @onready var deck_in_hand: Node2D = $DeckInHand
 @onready var deck_ui: PlayableDeckUI = $PlayableDeckUi
@@ -37,7 +35,7 @@ func _process(delta: float) -> void:
 			$MainScreen/EnemyCharacter.spend_health(3)
 			$MainScreen/PlayerCharacter.take_damage(3)
 		if enemy_state == 1:
-			$MainScreen/EnemyCharacter.spend_heath(3)
+			$MainScreen/EnemyCharacter.spend_health(3)
 			$MainScreen/EnemyCharacter.add_armor(3)
 		if enemy_state == 2:
 			$MainScreen/EnemyCharacter.spend_health(3)
@@ -123,18 +121,15 @@ func _on_end_turn_pressed() -> void:
 		game_control.transition(GameController.GameState.ENEMY_TURN)
 		$MainScreen/EnemyCharacter.start_turn()
 
-
 func _on_playable_deck_ui_pressed() -> void:
 	if(!deck_ui.is_empty()):
 		var card_with_id = deck_ui.draw()
 		deck_in_hand.add_card(card_with_id)
 	pass
 
-
-func _on_começar_pressed() -> void:
-	$"CanvasLayer/tela de começo".visible = false
-	deck_in_hand.start()
-
-
 func _on_deck_in_hand_starting() -> void:
 	deck_ui.deck = player_deck.get_playable_deck()
+
+func _on_start_button_pressed() -> void:
+	$"CanvasLayer/StartScreen".visible = false
+	deck_in_hand.start()
