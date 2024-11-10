@@ -48,23 +48,13 @@ func _process(delta: float) -> void:
 	
 	if game_control.current_state == GameController.GameState.ENEMY_TURN:
 		for i in 3:
-			var choosed_card: UsableCard = enemy_deck_in_hand.hand.hand[rng.randi_range(0, enemy_deck_in_hand.hand.hand.size() - 1)]
-			if choosed_card.get_type() == "spell":
-				choosed_card.activate({
-					"caster": $MainScreen/EnemyCharacter,
-					"your_monster": enemy_deck_in_hand.table.table,
-					"targets": player_deck_in_hand.table.table,
-					"enemy": $MainScreen/PlayerCharacter,
-					"objective": objective_card
-				})
-			if choosed_card.get_type() == "structure" || choosed_card.get_type() == "creature":
-				choosed_card.activate({
-					"caster": $MainScreen/EnemyCharacter,
-					"your_monster": enemy_deck_in_hand.table.table,
-					"targets": player_deck_in_hand.table.table,
-					"enemy": $MainScreen/PlayerCharacter,
-					"objective": objective_card
-				})
+			if(enemy_deck_in_hand.hand.hand.is_empty()):
+				pass
+			else:
+				var choosed_card: UsableCard = enemy_deck_in_hand.hand.hand[rng.randi_range(0, enemy_deck_in_hand.hand.hand.size() - 1)]
+				choosed_card.set_rotation(deg_to_rad(0))
+				enemy_deck_in_hand._on_hand_card_transfer_to_table(choosed_card)
+				print(choosed_card)
 		
 		game_control.transition(GameController.GameState.ATTACK_TURN)
 		for creature in player_deck_in_hand.table.table:
@@ -179,6 +169,9 @@ func _on_inflict_3_damage_pressed() -> void:
 func _on_end_turn_pressed() -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		game_control.transition(GameController.GameState.ENEMY_TURN)
+		if(!deck_ui.is_empty()):
+			var card_with_id = deck_ui.draw()
+			enemy_deck_in_hand.add_card(card_with_id)
 		$MainScreen/EnemyCharacter.start_turn()
 
 func _on_playable_deck_ui_pressed() -> void:

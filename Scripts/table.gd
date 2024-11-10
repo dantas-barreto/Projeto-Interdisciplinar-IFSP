@@ -31,7 +31,8 @@ func add_structure(card: Node2D):
 func remove_card(index: int):
 	var removing_card = table[index]
 	table.remove_at(index)
-	touched.remove_at(touched.find(removing_card))
+	if(!touched.is_empty()):
+		touched.remove_at(touched.find(removing_card))
 	remove_child(removing_card)
 	reposition_cards()
 	return removing_card
