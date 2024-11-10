@@ -29,3 +29,6 @@ card_type = "creature"
 
 [node name="ArmouredFireAction" type="Node2D" parent="."]
 script = ExtResource("5_5d2h2")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

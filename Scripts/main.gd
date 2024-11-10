@@ -88,7 +88,7 @@ func _process(delta: float) -> void:
 			$MainScreen/EnemyCharacter.add_armor(1)
 			$MainScreen/EnemyCharacter.add_health(4)
 		
-		enemy_state = rng.randi_range(0, 9)
+		enemy_state = rng.randi_range(10, 19)
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 		if(!deck_ui.is_empty()):
 			var card_with_id = deck_ui.draw()

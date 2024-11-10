@@ -4,6 +4,6 @@ func activate(game_state: Dictionary):
 	var caster: Character = game_state.get("caster")
 	var targets: Array = game_state.get("targets")
 	caster.spend_health(2)
-	for i in targets:
+	for i in range(targets.size()):
 		var target: UsableCard = targets[i]
 		target.dont_attack()

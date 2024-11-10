@@ -30,3 +30,6 @@ card_type = "creature"
 
 [node name="EarthGolemAction" type="Node2D" parent="."]
 script = ExtResource("2_ydr8g")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

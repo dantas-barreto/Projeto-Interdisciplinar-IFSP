@@ -24,6 +24,10 @@ card_name = "Droplet"
 card_description = "Defense 1,    Health Pool 1"
 card_attack = 1
 card_defense = 1
+card_type = "creature"
 
 [node name="DropletAction" type="Node2D" parent="."]
 script = ExtResource("5_bkgoe")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

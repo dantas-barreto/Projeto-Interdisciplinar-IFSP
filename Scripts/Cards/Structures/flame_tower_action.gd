@@ -13,6 +13,6 @@ func activate_in_play(game_state: Dictionary):
 	burn(targets)
 
 func burn(creatures: Array) -> void:
-	for i in creatures:
+	for i in range(creatures.size()):
 		var creature: UsableCard = creatures[i]
 		creature.take_damage(1)
