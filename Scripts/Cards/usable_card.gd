@@ -2,6 +2,7 @@ class_name UsableCard extends Node2D
 
 signal mouse_entered(card: Card)
 signal mouse_exited(card: Card)
+signal die_card(card: Card)
 
 @export var action: Node2D
 
@@ -58,3 +59,6 @@ func _on_card_mouse_entered(card: Card) -> void:
 
 func _on_card_mouse_exited(card: Card) -> void:
 	mouse_exited.emit(self)
+
+func _on_card_die_card(card: Card) -> void:
+	die_card.emit(self)

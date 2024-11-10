@@ -3,6 +3,7 @@ class_name Card extends Node2D
 
 signal mouse_entered(card: Card)
 signal mouse_exited(card: Card)
+signal die_card(card: Card)
 
 @export var base_card_sprite: Sprite2D
 @export var card_frame_sprite: Sprite2D
@@ -70,6 +71,8 @@ func add_armor(amount) -> void:
 
 func take_damage(amount) -> void:
 	card_defense -= amount
+	if(card_defense >= 0):
+		die_card.emit(self)
 
 func dont_attack():
 	card_attack = 0

@@ -31,5 +31,6 @@ card_type = "creature"
 [node name="WaterElementalAction" type="Node2D" parent="."]
 script = ExtResource("2_mb3t7")
 
+[connection signal="die_card" from="Card" to="." method="_on_card_die_card"]
 [connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
 [connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

@@ -21,6 +21,7 @@ func add_card(card: Node2D):
 	add_child(card)
 	card.mouse_entered.connect(_handle_card_touched)
 	card.mouse_exited.connect(_handle_card_untouched)
+	card.die_card.connect(_dying_card)
 	reposition_cards()
 
 func add_structure(card: Node2D):
@@ -60,6 +61,9 @@ func _handle_card_touched(card):
 func _handle_card_untouched(card):
 	if(current_selected_card_index != -1):
 		touched.remove_at(touched.find(card))
+
+func _dying_card(card):
+	remove_card(table.find(card))
 
 func _ready() -> void:
 	pass

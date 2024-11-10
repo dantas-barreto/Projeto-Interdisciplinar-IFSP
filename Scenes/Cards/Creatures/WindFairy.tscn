@@ -30,5 +30,6 @@ card_type = "creature"
 [node name="WindFairyAction" type="Sprite2D" parent="."]
 script = ExtResource("4_e3a38")
 
+[connection signal="die_card" from="Card" to="." method="_on_card_die_card"]
 [connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
 [connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]
