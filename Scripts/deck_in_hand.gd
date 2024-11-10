@@ -35,6 +35,19 @@ signal starting
 @onready var waterMarkCardScene: PackedScene = preload("res://Scenes/Cards/Structures/WaterMark.tscn")
 
 # Creatures
+@onready var airGolemScene: PackedScene = preload("res://Scenes/Cards/Creatures/AirGolem.tscn")
+@onready var armouredfireScene: PackedScene = preload("res://Scenes/Cards/Creatures/ArmouredFire.tscn")
+@onready var dropletScene: PackedScene = preload("res://Scenes/Cards/Creatures/Droplet.tscn")
+@onready var earthElementalScene: PackedScene = preload("res://Scenes/Cards/Creatures/EarthElemental.tscn")
+@onready var earthGolemScene: PackedScene = preload("res://Scenes/Cards/Creatures/EarthGolem.tscn")
+@onready var fireElementalScene: PackedScene = preload("res://Scenes/Cards/Creatures/FireElemental.tscn")
+@onready var magicFireScene: PackedScene = preload("res://Scenes/Cards/Creatures/MagicFire.tscn")
+@onready var stoneScene: PackedScene = preload("res://Scenes/Cards/Creatures/Stone.tscn")
+@onready var twisterScene: PackedScene = preload("res://Scenes/Cards/Creatures/Twister.tscn")
+@onready var waterElementalScene: PackedScene = preload("res://Scenes/Cards/Creatures/WaterElemental.tscn")
+@onready var windElementalScene: PackedScene = preload("res://Scenes/Cards/Creatures/WindElemental.tscn")
+@onready var windFairyScene: PackedScene = preload("res://Scenes/Cards/Creatures/WindFairy.tscn")
+
 
 @onready var table: Table = $Table
 @onready var hand: Hand = $Hand
@@ -99,6 +112,30 @@ func start():
 		deck.add_card(waterMark)
 		
 		#creature
+		var airGolem = airGolemScene.instantiate()
+		deck.add_card(airGolem)
+		var armouredFire = armouredfireScene.instantiate()
+		deck.add_card(armouredFire)
+		var droplet = dropletScene.instantiate()
+		deck.add_card(droplet)
+		var earthElemental = earthElementalScene.instantiate()
+		deck.add_card(earthElemental)
+		var earthGolem = earthGolemScene.instantiate()
+		deck.add_card(earthGolem)
+		var fireElemental = fireElementalScene.instantiate()
+		deck.add_card(fireElemental)
+		var magicFire = magicFireScene.instantiate()
+		deck.add_card(magicFire)
+		var stone = stoneScene.instantiate()
+		deck.add_card(stone)
+		var twister = twisterScene.instantiate()
+		deck.add_card(twister)
+		var waterElemental = waterElementalScene.instantiate()
+		deck.add_card(waterElemental)
+		var windElemental = windElementalScene.instantiate()
+		deck.add_card(windElemental)
+		var windFairy = windFairyScene.instantiate()
+		deck.add_card(windFairy)
 
 #func _on_attack_pressed():
 #	var attackCard = attackCardScene.instantiate()
