@@ -80,10 +80,10 @@ func _process(delta: float) -> void:
 			var card_with_id = deck_ui.draw()
 			player_deck_in_hand.add_card(card_with_id)
 		for structure in player_deck_in_hand.table.structures:
-			structure.activate({
+			structure.activate_in_play({
 			"caster": $MainScreen/PlayerCharacter,
 			"your_monster": player_deck_in_hand.table.table,
-			"targets": $MainScreen/EnemyCharacter,
+			"targets": enemy_deck_in_hand.table.table,
 			"enemy": $MainScreen/EnemyCharacter
 			})
 		$MainScreen/PlayerCharacter.start_turn()
@@ -108,14 +108,14 @@ func _on_table_card_activated(card: UsableCard) -> void:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
 		"your_monster": player_deck_in_hand.table.table,
-		"targets": $MainScreen/EnemyCharacter,
+		"targets": enemy_deck_in_hand.table.table,
 		"enemy": $MainScreen/EnemyCharacter
 	})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
 		card.activate({
 		"caster": $MainScreen/EnemyCharacter,
 		"your_monster":enemy_deck_in_hand.table.table,
-		"targets": $MainScreen/PlayerCharacter,
+		"targets": player_deck_in_hand.table.table,
 		"enemy": $MainScreen/EnemyCharacter
 	})
 
@@ -126,7 +126,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 			card.activate({
 			"caster": $MainScreen/PlayerCharacter,
 			"your_monster":player_deck_in_hand.table.table,
-			"targets": $MainScreen/EnemyCharacter,
+			"targets": enemy_deck_in_hand.table.table,
 			"enemy": $MainScreen/EnemyCharacter
 			})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
@@ -134,7 +134,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 			card.activate({
 			"caster": $MainScreen/EnemyCharacter,
 			"your_monster":enemy_deck_in_hand.table.table,
-			"targets": $MainScreen/PlayerCharacter,
+			"targets": player_deck_in_hand.table.table,
 			"enemy": $MainScreen/PlayerCharacter
 			})
 
@@ -204,3 +204,5 @@ func _on_start_button_pressed() -> void:
 	$"CanvasLayer/StartScreen".visible = false
 	player_deck_in_hand.start()
 	enemy_deck_in_hand.start()
+	
+	_on_deck_in_hand_starting()
