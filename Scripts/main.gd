@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player_character: Character
+@export var enemy_character: Character
 
 @onready var game_control:GameController = $GameController
 @onready var player_deck_in_hand: Node2D = $PlayerDeckInHand
@@ -181,6 +182,8 @@ func _on_playable_deck_ui_pressed() -> void:
 	pass
 
 func _on_começar_pressed() -> void:
+	player_character.set_health_value(player_character.health)
+	enemy_character.set_health_value(enemy_character.health)
 	$"CanvasLayer/tela de começo".visible = false
 	player_deck_in_hand.start()
 	for i in range(5):

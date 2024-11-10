@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/character.gd" id="1_q7xjl"]
 [ext_resource type="Texture2D" uid="uid://lkoh2wioj3vm" path="res://Sprites/BaseCost.png" id="2_b2303"]
 
-[node name="PlayerCharacter" type="Node2D"]
+[node name="Character" type="Node2D"]
 script = ExtResource("1_q7xjl")
-starting_health = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_b2303")
