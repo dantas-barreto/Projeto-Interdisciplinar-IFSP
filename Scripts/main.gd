@@ -103,12 +103,14 @@ func _on_table_card_activated(card: UsableCard) -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
+		"your_monster":deck_in_hand.table.table,
 		"targets": $MainScreen/EnemyCharacter,
 		"enemy": $MainScreen/EnemyCharacter
 	})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
 		card.activate({
 		"caster": $MainScreen/EnemyCharacter,
+		"your_monster":deck_in_hand.table.table,
 		"targets": $MainScreen/PlayerCharacter,
 		"enemy": $MainScreen/EnemyCharacter
 	})
@@ -119,6 +121,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 		if card_cost <= $MainScreen/PlayerCharacter.health:
 			card.activate({
 			"caster": $MainScreen/PlayerCharacter,
+			"your_monster":deck_in_hand.table.table,
 			"targets": $MainScreen/EnemyCharacter,
 			"enemy": $MainScreen/EnemyCharacter
 			})
@@ -126,6 +129,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 		if card_cost <= $MainScreen/EnemyCharacter.health:
 			card.activate({
 			"caster": $MainScreen/EnemyCharacter,
+			"your_monster":deck_in_hand.table.table,
 			"targets": $MainScreen/PlayerCharacter,
 			"enemy": $MainScreen/PlayerCharacter
 			})
