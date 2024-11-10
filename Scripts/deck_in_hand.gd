@@ -7,9 +7,9 @@ signal starting
 @export var deck: Deck
 
 # debug
-@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/AttackCard.tscn")
-@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
-@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
+#@onready var attackCardScene: PackedScene = preload("res://Scenes/Cards/Debug/AttackCard.tscn")
+#@onready var revivifyCardScene: PackedScene = preload("res://Scenes/Cards/Debug/RevivifyCard.tscn")
+#@onready var defendCardScene: PackedScene = preload("res://Scenes/Cards/Debug/DefendCard.tscn")
 
 # Spells
 @onready var fireballCardScene: PackedScene = preload("res://Scenes/Cards/Spells/Fireball.tscn")
@@ -100,17 +100,17 @@ func start():
 		
 		#creature
 
-func _on_attack_pressed():
-	var attackCard = attackCardScene.instantiate()
-	deck.add_card(attackCard)
+#func _on_attack_pressed():
+#	var attackCard = attackCardScene.instantiate()
+#	deck.add_card(attackCard)
 
-func _on_revivify_pressed():
-	var revivifyCard = revivifyCardScene.instantiate()
-	deck.add_card(revivifyCard)
+#func _on_revivify_pressed():
+#	var revivifyCard = revivifyCardScene.instantiate()
+#	deck.add_card(revivifyCard)
 
-func _on_defend_pressed() -> void:
-	var defendCard = defendCardScene.instantiate()
-	deck.add_card(defendCard)
+#func _on_defend_pressed() -> void:
+#	var defendCard = defendCardScene.instantiate()
+#	deck.add_card(defendCard)
 
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
 	if(card.get_type() == "spell"):

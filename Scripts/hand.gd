@@ -25,6 +25,7 @@ func empty_hand():
 func add_card(card: Node2D):
 	hand.push_back(card)
 	add_child(card)
+	card.set_scale(Vector2(0.3, 0.3))
 	card.mouse_entered.connect(_handle_card_touched)
 	card.mouse_exited.connect(_handle_card_untouched)
 	reposition_cards()
