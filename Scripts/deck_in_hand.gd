@@ -1,6 +1,7 @@
 extends Node2D
 
 signal card_activated(card: UsableCard)
+signal table_card_activated(card: UsableCard)
 signal starting
 
 @export var deck: Deck
@@ -96,7 +97,6 @@ func start():
 		
 		#creature
 	starting.emit()
-	
 
 func _on_attack_pressed():
 	var attackCard = attackCardScene.instantiate()

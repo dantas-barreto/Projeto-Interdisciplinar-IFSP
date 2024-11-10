@@ -88,25 +88,37 @@ func _input(event: InputEvent) -> void:
 	if event.is_action("restart"):
 		restart_game()
 
-func _on_table_card_activated(card: UsableCard) -> void:
+func _on_player_table_card_activated(card: UsableCard) -> void:
 	var card_cost: int = card.get_cost()
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
 		"targets": $MainScreen/EnemyCharacter
 	})
-	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
-		card.activate({
-		"caster": $MainScreen/EnemyCharacter,
-		"targets": $MainScreen/PlayerCharacter
-	})
 
-func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
+func _on_player_deck_in_hand_card_activated(card: UsableCard) -> void:
 	var card_cost: int = card.get_cost()
 	if card_cost <= $MainScreen/PlayerCharacter.health:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
 		"targets": $MainScreen/EnemyCharacter
+		})
+		card.queue_free()
+
+func _on_enemy_table_card_activated(card: UsableCard) -> void:
+	var card_cost: int = card.get_cost()
+	if game_control.current_state == GameController.GameState.ENEMY_TURN:
+		card.activate({
+		"caster": $MainScreen/EnemyCharacter,
+		"targets": $MainScreen/PlayerCharacter
+	})
+
+func _on_enemy_deck_in_hand_card_activated(card: UsableCard) -> void:
+	var card_cost: int = card.get_cost()
+	if game_control.current_state == GameController.GameState.ENEMY_TURN:
+		card.activate({
+			"caster": $MainScreen/EnemyCharacter,
+			"targets": $MainScreen/PlayerCharacter
 		})
 		card.queue_free()
 

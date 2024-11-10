@@ -1,7 +1,7 @@
 @tool
 class_name Table extends Node2D
 
-signal card_activated(card: UsableCard)
+signal table_card_activated(card: UsableCard)
 
 @export var table_size_x: int = 1500
 @export var table_size_y: int = 250
@@ -62,7 +62,7 @@ func _ready() -> void:
 func _input(event):
 	if event.is_action_pressed("mouse_click_left") && current_selected_card_index >= 0:
 		var card = table[current_selected_card_index]
-		card_activated.emit(card)
+		table_card_activated.emit(card)
 
 func _process(delta):
 	for card in table:
