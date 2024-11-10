@@ -21,6 +21,7 @@ func restart_game():
 	player_deck_in_hand.reset()
 	enemy_deck_in_hand.reset()
 	deck_ui.deck = player_deck.get_playable_deck()
+	$CanvasLayer/StartScreen.visible = true
 
 func _ready() -> void:
 	player_deck_in_hand.deck = player_deck
@@ -202,6 +203,7 @@ func _on_player_character_add_discard(type) -> void:
 
 func _on_start_button_pressed() -> void:
 	$"CanvasLayer/StartScreen".visible = false
+	$EnemyDeckInHand/Hand.visible = false
 	player_deck_in_hand.start()
 	enemy_deck_in_hand.start()
 	
