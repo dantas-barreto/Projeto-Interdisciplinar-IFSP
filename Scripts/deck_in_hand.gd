@@ -51,7 +51,7 @@ func reset():
 	hand.empty_hand()
 
 func removeRandomCard():
-	hand.remove_card(randi_range(0,hand.hand.size()))
+	hand.remove_card(randi_range(0,hand.hand.size()-1))
 
 func start():
 	for i in range(3): 
@@ -116,6 +116,8 @@ func _on_defend_pressed() -> void:
 func _on_hand_card_transfer_to_table(card: UsableCard) -> void:
 	if(card.get_type() == "spell"):
 		card_activated.emit(card)
+	elif(card.get_type() == "creature"):
+		table.add_structure(card)
 	else:
 		table.add_card(card)
 	hand.remove_card(hand.current_selected_card_index)

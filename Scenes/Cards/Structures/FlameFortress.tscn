@@ -29,3 +29,6 @@ card_type = "structure"
 
 [node name="FlameFortressAction" type="Node2D" parent="."]
 script = ExtResource("2_0cu7l")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]
