@@ -3,10 +3,12 @@ extends Node2D
 @export var player_character: Character
 
 @onready var game_control:GameController = $GameController
-@onready var deck_in_hand: Node2D = $DeckInHand
+@onready var player_deck_in_hand: Node2D = $PlayerDeckInHand
+@onready var enemy_deck_in_hand: Node2D = $EnemyDeckInHand
 @onready var deck_ui: PlayableDeckUI = $PlayableDeckUi
 
-@onready var player_deck : Deck = Deck.new()
+@onready var player_deck: Deck = Deck.new()
+@onready var enemy_deck: Deck = Deck.new()
 
 var rng = RandomNumberGenerator.new()
 
@@ -16,11 +18,13 @@ func restart_game():
 	game_control.current_state = GameController.GameState.PLAYER_TURN
 	$MainScreen/PlayerCharacter.reset()
 	$MainScreen/EnemyCharacter.reset()
-	deck_in_hand.reset()
+	player_deck_in_hand.reset()
+	enemy_deck_in_hand.reset()
 	deck_ui.deck = player_deck.get_playable_deck()
 
 func _ready() -> void:
-	deck_in_hand.deck = player_deck
+	player_deck_in_hand.deck = player_deck
+	enemy_deck_in_hand.deck = enemy_deck
 	deck_ui.deck = player_deck.get_playable_deck()
 
 func _process(delta: float) -> void:
@@ -74,11 +78,11 @@ func _process(delta: float) -> void:
 		game_control.transition(GameController.GameState.PLAYER_TURN)
 		if(!deck_ui.is_empty()):
 			var card_with_id = deck_ui.draw()
-			deck_in_hand.add_card(card_with_id)
-		for structure in deck_in_hand.table.structures:
+			player_deck_in_hand.add_card(card_with_id)
+		for structure in player_deck_in_hand.table.structures:
 			structure.activate({
 			"caster": $MainScreen/PlayerCharacter,
-			"your_monster":deck_in_hand.table.table,
+			"your_monster": player_deck_in_hand.table.table,
 			"targets": $MainScreen/EnemyCharacter,
 			"enemy": $MainScreen/EnemyCharacter
 			})
@@ -103,14 +107,14 @@ func _on_table_card_activated(card: UsableCard) -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
-		"your_monster":deck_in_hand.table.table,
+		"your_monster": player_deck_in_hand.table.table,
 		"targets": $MainScreen/EnemyCharacter,
 		"enemy": $MainScreen/EnemyCharacter
 	})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
 		card.activate({
 		"caster": $MainScreen/EnemyCharacter,
-		"your_monster":deck_in_hand.table.table,
+		"your_monster":enemy_deck_in_hand.table.table,
 		"targets": $MainScreen/PlayerCharacter,
 		"enemy": $MainScreen/EnemyCharacter
 	})
@@ -121,7 +125,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 		if card_cost <= $MainScreen/PlayerCharacter.health:
 			card.activate({
 			"caster": $MainScreen/PlayerCharacter,
-			"your_monster":deck_in_hand.table.table,
+			"your_monster":player_deck_in_hand.table.table,
 			"targets": $MainScreen/EnemyCharacter,
 			"enemy": $MainScreen/EnemyCharacter
 			})
@@ -129,7 +133,7 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 		if card_cost <= $MainScreen/EnemyCharacter.health:
 			card.activate({
 			"caster": $MainScreen/EnemyCharacter,
-			"your_monster":deck_in_hand.table.table,
+			"your_monster":enemy_deck_in_hand.table.table,
 			"targets": $MainScreen/PlayerCharacter,
 			"enemy": $MainScreen/PlayerCharacter
 			})
@@ -165,30 +169,38 @@ func _on_end_turn_pressed() -> void:
 func _on_playable_deck_ui_pressed() -> void:
 	if(!deck_ui.is_empty()):
 		var card_with_id = deck_ui.draw()
-		deck_in_hand.add_card(card_with_id)
+		player_deck_in_hand.add_card(card_with_id)
 	pass
 
 func _on_começar_pressed() -> void:
 	$"CanvasLayer/tela de começo".visible = false
-	deck_in_hand.start()
+	player_deck_in_hand.start()
 	for i in range(5):
 		var card_with_id = deck_ui.draw()
-		deck_in_hand.add_card(card_with_id)
+		player_deck_in_hand.add_card(card_with_id)
+	enemy_deck_in_hand.start()
+	for i in range(5):
+		var card_with_id = deck_ui.draw()
+		enemy_deck_in_hand.add_card(card_with_id)
 
 func _on_deck_in_hand_starting() -> void:
 	deck_ui.deck = player_deck.get_playable_deck()
 	for i in range(5):
 		var card_with_id = deck_ui.draw()
-		deck_in_hand.add_card(card_with_id)
-
+		player_deck_in_hand.add_card(card_with_id)
+	deck_ui.deck = enemy_deck.get_playable_deck() 
+	for i in range(5):
+		var card_with_id = deck_ui.draw()
+		enemy_deck_in_hand.add_card(card_with_id)
 
 func _on_player_character_add_discard(type) -> void:
 	if(type == "add"):
 		var card_with_id = deck_ui.draw()
-		deck_in_hand.add_card(card_with_id)
+		player_deck_in_hand.add_card(card_with_id)
 	else:
-		deck_in_hand.removeRandomCard()
+		player_deck_in_hand.removeRandomCard()
 
 func _on_start_button_pressed() -> void:
 	$"CanvasLayer/StartScreen".visible = false
-	deck_in_hand.start()
+	player_deck_in_hand.start()
+	enemy_deck_in_hand.start()
