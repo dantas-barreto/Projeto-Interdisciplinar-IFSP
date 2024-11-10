@@ -95,16 +95,6 @@ texture = ExtResource("4_42njd")
 
 [node name="DeckInHand" parent="." instance=ExtResource("1_v0gtk")]
 
-[node name="MainScreen" type="Node2D" parent="."]
-
-[node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(300, 810)
-scale = Vector2(1.5, 1.5)
-
-[node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
-position = Vector2(1300, 90)
-scale = Vector2(1.5, 1.5)
-
 [node name="Inflict1Damage" type="Button" parent="."]
 visible = false
 offset_left = 2.0
@@ -128,6 +118,16 @@ offset_right = 1480.0
 offset_bottom = 835.0
 text = "End Turn"
 
+[node name="MainScreen" type="Node2D" parent="."]
+
+[node name="PlayerCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
+position = Vector2(300, 810)
+scale = Vector2(1.5, 1.5)
+
+[node name="EnemyCharacter" parent="MainScreen" instance=ExtResource("1_fwshs")]
+position = Vector2(1300, 90)
+scale = Vector2(1.5, 1.5)
+
 [node name="PlayableDeckUi" parent="." instance=ExtResource("6_gb1vt")]
 offset_left = 46.0
 offset_top = 689.0
@@ -138,8 +138,8 @@ scale = Vector2(0.3, 0.3)
 [connection signal="pressed" from="CanvasLayer/tela de começo/Começar" to="." method="_on_começar_pressed"]
 [connection signal="card_activated" from="DeckInHand" to="." method="_on_deck_in_hand_card_activated"]
 [connection signal="starting" from="DeckInHand" to="." method="_on_deck_in_hand_starting"]
-[connection signal="add_discard" from="MainScreen/PlayerCharacter" to="." method="_on_player_character_add_discard"]
 [connection signal="pressed" from="Inflict1Damage" to="." method="_on_inflict_1_damage_pressed"]
 [connection signal="pressed" from="Inflict3Damage" to="." method="_on_inflict_3_damage_pressed"]
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]
+[connection signal="add_discard" from="MainScreen/PlayerCharacter" to="." method="_on_player_character_add_discard"]
 [connection signal="pressed" from="PlayableDeckUi" to="." method="_on_playable_deck_ui_pressed"]

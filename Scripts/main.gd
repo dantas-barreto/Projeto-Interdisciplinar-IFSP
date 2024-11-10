@@ -98,12 +98,14 @@ func _on_table_card_activated(card: UsableCard) -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
-		"targets": $MainScreen/EnemyCharacter
+		"targets": $MainScreen/EnemyCharacter,
+		"enemy": $MainScreen/EnemyCharacter
 	})
 	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
 		card.activate({
 		"caster": $MainScreen/EnemyCharacter,
-		"targets": $MainScreen/PlayerCharacter
+		"targets": $MainScreen/PlayerCharacter,
+		"enemy": $MainScreen/EnemyCharacter
 	})
 
 func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
@@ -111,7 +113,8 @@ func _on_deck_in_hand_card_activated(card: UsableCard) -> void:
 	if card_cost <= $MainScreen/PlayerCharacter.health:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
-		"targets": $MainScreen/EnemyCharacter
+		"targets": $MainScreen/EnemyCharacter,
+		"enemy": $MainScreen/EnemyCharacter
 		})
 		card.queue_free()
 
