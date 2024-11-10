@@ -11,8 +11,8 @@ script = ExtResource("1_5xqhf")
 action = NodePath("WindElementalAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
-position = Vector2(0, -3)
-scale = Vector2(0.241935, 0.252344)
+position = Vector2(0, 0.000170171)
+scale = Vector2(0.241935, 0.25)
 texture = ExtResource("2_un2ur")
 
 [node name="FrameCardSprite" type="Sprite2D" parent="."]

@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_28ifl"]
 [ext_resource type="Script" path="res://Scripts/Cards/Creatures/droplet_action.gd" id="5_bkgoe"]
 
-[node name="Droplet" type="Node2D"]
+[node name="Droplet" type="Node2D" node_paths=PackedStringArray("action")]
 script = ExtResource("1_amhyh")
+action = NodePath("DropletAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.193548, 0.2)
