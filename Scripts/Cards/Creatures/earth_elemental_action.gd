@@ -5,7 +5,7 @@ func activate(game_state: Dictionary):
 	caster.spend_health(10)
 
 func defense(player: Character) -> void:
-	player.add_armor(2)
+	player.add_armor(1)
 
 func health_pool(player: Character) -> void:
 	player.add_health(1)

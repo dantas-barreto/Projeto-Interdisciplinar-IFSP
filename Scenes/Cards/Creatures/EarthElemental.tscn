@@ -11,12 +11,22 @@ script = ExtResource("1_cta8x")
 action = NodePath("EarthElementalAction")
 
 [node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
 texture = ExtResource("2_s7igx")
 
 [node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
 texture = ExtResource("3_b5rha")
 
-[node name="Card" parent="." instance=ExtResource("4_eqjj5")]
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_eqjj5")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Earth Elemental"
+card_description = "Defense 1,    Health Pool 1"
+card_cost = 10
+card_attack = 11
+card_defense = 14
+card_type = "creature"
 
 [node name="EarthElementalAction" type="Node2D" parent="."]
 script = ExtResource("5_j8pfs")
