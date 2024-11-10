@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://co0qkbu0oxl3j"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_t4oep"]
+[ext_resource type="Texture2D" uid="uid://nkp7obw2ficj" path="res://Sprites/cards/fire/elemental_de_fogo.jpg" id="2_hxxa0"]
+[ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_odds0"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_jw5ek"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/fire_elemental_action.gd" id="5_p18et"]
+
+[node name="FireElemental" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_t4oep")
+action = NodePath("FireElementalAction")
+
+[node name="ElementalDeFogo" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_hxxa0")
+
+[node name="MolduraFogo" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_odds0")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_jw5ek")]
+base_card_sprite = NodePath("../ElementalDeFogo")
+card_frame_sprite = NodePath("../MolduraFogo")
+card_name = "Fire Elemental"
+card_description = "Double Attack,  Burn 4,       Health Pool"
+card_cost = 10
+card_attack = 4
+card_defense = 7
+card_type = "creature"
+
+[node name="FireElementalAction" type="Node2D" parent="."]
+script = ExtResource("5_p18et")

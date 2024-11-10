@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://db805nu1oqf5e"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_amhyh"]
+[ext_resource type="Texture2D" uid="uid://cvsucwa0dmign" path="res://Sprites/cards/water/gota.jpg" id="2_l1oua"]
+[ext_resource type="Texture2D" uid="uid://dtsv3tv83b5km" path="res://Sprites/cards/borders/moldura_agua.png" id="3_tukql"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_28ifl"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/droplet_action.gd" id="5_bkgoe"]
+
+[node name="Droplet" type="Node2D"]
+script = ExtResource("1_amhyh")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("2_l1oua")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_tukql")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_28ifl")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Droplet"
+card_description = "Defense 1,    Health Pool 1"
+card_attack = 1
+card_defense = 1
+
+[node name="DropletAction" type="Node2D" parent="."]
+script = ExtResource("5_bkgoe")

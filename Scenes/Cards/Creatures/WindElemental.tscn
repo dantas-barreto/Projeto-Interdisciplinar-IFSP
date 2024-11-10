@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3nvjveyo8qew"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_5xqhf"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_1b4c0"]
+[ext_resource type="Texture2D" uid="uid://c06uijictjen7" path="res://Sprites/cards/air/elemental_de_vento.jpg" id="2_un2ur"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/wind_elemental_action.gd" id="3_70kuj"]
+[ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_tcjjy"]
+
+[node name="WindElemental" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_5xqhf")
+action = NodePath("WindElementalAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -3)
+scale = Vector2(0.241935, 0.252344)
+texture = ExtResource("2_un2ur")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_tcjjy")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_1b4c0")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Wind Elemental"
+card_description = "Wind,         Health Pool 1"
+card_cost = 10
+card_attack = 15
+card_defense = 9
+card_type = "creature"
+
+[node name="WindElementalAction" type="Node2D" parent="."]
+script = ExtResource("3_70kuj")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://i8fdqncwodw3"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_bnytx"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_edgd0"]
+[ext_resource type="Texture2D" uid="uid://ds1m1gd1jkho8" path="res://Sprites/cards/air/tornado.jpg" id="2_akrsq"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/twister_action.gd" id="2_yosv1"]
+[ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_fpmig"]
+
+[node name="Twister" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_bnytx")
+action = NodePath("TwisterAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_akrsq")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_fpmig")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("1_edgd0")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Twister"
+card_description = "Wind: choose an enemy creature and change its attack to 0"
+card_cost = 5
+card_attack = 5
+card_defense = 3
+card_type = "creature"
+
+[node name="TwisterAction" type="Node2D" parent="."]
+script = ExtResource("2_yosv1")

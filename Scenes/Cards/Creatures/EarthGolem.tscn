@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ecjxeycnf52c"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_jppru"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="2_40x6y"]
+[ext_resource type="Texture2D" uid="uid://cljxtkff7yoct" path="res://Sprites/cards/earth/golem_de_terra.jpg" id="2_r062l"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/earth_golem_action.gd" id="2_ydr8g"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_2gf24"]
+
+[node name="EarthGolem" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_jppru")
+action = NodePath("EarthGolemAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_r062l")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_2gf24")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("2_40x6y")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Earth Golem"
+card_description = "Resistance 2, Double Attack"
+card_cost = 3
+card_attack = 3
+card_defense = 3
+card_type = "creature"
+
+[node name="EarthGolemAction" type="Node2D" parent="."]
+script = ExtResource("2_ydr8g")

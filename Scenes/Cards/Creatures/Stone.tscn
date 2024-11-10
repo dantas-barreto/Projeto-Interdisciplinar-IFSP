@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://cul2bkt14a17m"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_fnshc"]
+[ext_resource type="Texture2D" uid="uid://qdj3v724kxnv" path="res://Sprites/cards/earth/pedregulho.jpg" id="2_3a0sv"]
+[ext_resource type="Texture2D" uid="uid://cskxypfm7p07v" path="res://Sprites/cards/borders/moldura_terra.png" id="3_ybx7u"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_yxqyn"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/stone_action.gd" id="5_c8lgc"]
+
+[node name="Stone" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_fnshc")
+action = NodePath("StoneAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_3a0sv")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_ybx7u")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_yxqyn")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Stone"
+card_description = "Defense 1 "
+card_defense = 3
+card_type = "creature"
+
+[node name="StoneAction" type="Node2D" parent="."]
+script = ExtResource("5_c8lgc")

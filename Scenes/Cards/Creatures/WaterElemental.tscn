@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cptnquvb4o48s"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_ni8ik"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="1_nmh4y"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/water_elemental_action.gd" id="2_mb3t7"]
+
+[node name="WaterElemental" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_ni8ik")
+action = NodePath("WaterElementalAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("1_nmh4y")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Water Elemental"
+card_description = "Defense 1,    Double Attack, Health Pool 3"
+card_cost = 10
+card_attack = 8
+card_defense = 10
+card_type = "creature"
+
+[node name="WaterElementalAction" type="Node2D" parent="."]
+script = ExtResource("2_mb3t7")

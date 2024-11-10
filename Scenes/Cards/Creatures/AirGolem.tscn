@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcqgqnswovcit"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_t1qj8"]
+[ext_resource type="Texture2D" uid="uid://dfj0gnxxq7alj" path="res://Sprites/cards/air/golem_de_ar.jpg" id="2_bwrvq"]
+[ext_resource type="Texture2D" uid="uid://b6qdgwugscpta" path="res://Sprites/cards/borders/moldura_ar.png" id="3_oju2e"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_bgpvd"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/air_golem_action.gd" id="5_p0wqc"]
+
+[node name="AirGolem" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_t1qj8")
+action = NodePath("AirGolemAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_bwrvq")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+texture = ExtResource("3_oju2e")
+
+[node name="Card" parent="." instance=ExtResource("4_bgpvd")]
+
+[node name="AirGolemAction" type="Node2D" parent="."]
+script = ExtResource("5_p0wqc")

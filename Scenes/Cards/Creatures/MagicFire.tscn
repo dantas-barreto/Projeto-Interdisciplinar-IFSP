@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxilln173pdju"]
+
+[ext_resource type="Script" path="res://Scripts/Cards/usable_card.gd" id="1_fxwdr"]
+[ext_resource type="Texture2D" uid="uid://dbd5wmjxw5r7j" path="res://Sprites/cards/fire/fogo_magico.jpg" id="2_tuqy8"]
+[ext_resource type="Script" path="res://Scripts/Cards/Creatures/magic_fire_action.gd" id="2_v5qdr"]
+[ext_resource type="Texture2D" uid="uid://cj0kse4q8n2kh" path="res://Sprites/cards/borders/moldura_fogo.png" id="3_1h2jt"]
+[ext_resource type="PackedScene" uid="uid://c2weeh3iabe3x" path="res://Scenes/Card.tscn" id="4_2d43y"]
+
+[node name="MagicFire" type="Node2D" node_paths=PackedStringArray("action")]
+script = ExtResource("1_fxwdr")
+action = NodePath("MagicFireAction")
+
+[node name="BaseCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.241935, 0.25)
+texture = ExtResource("2_tuqy8")
+
+[node name="FrameCardSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.193548, 0.2)
+texture = ExtResource("3_1h2jt")
+
+[node name="Card" parent="." node_paths=PackedStringArray("base_card_sprite", "card_frame_sprite") instance=ExtResource("4_2d43y")]
+base_card_sprite = NodePath("../BaseCardSprite")
+card_frame_sprite = NodePath("../FrameCardSprite")
+card_name = "Magic Fire"
+card_description = "Burn 1"
+card_attack = 1
+card_defense = 1
+card_type = "creature"
+
+[node name="MagicFireAction" type="Node2D" parent="."]
+script = ExtResource("2_v5qdr")
