@@ -28,3 +28,6 @@ card_cost = 2
 
 [node name="MagicRainAction" type="Node2D" parent="."]
 script = ExtResource("3_jctpc")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

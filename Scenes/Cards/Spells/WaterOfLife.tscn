@@ -27,3 +27,6 @@ card_cost = 5
 
 [node name="WaterOfLifeAction" type="Node2D" parent="."]
 script = ExtResource("5_ayv6e")
+
+[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]

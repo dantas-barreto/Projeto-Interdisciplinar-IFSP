@@ -1,6 +1,8 @@
 @tool
 class_name Character extends Node2D
 
+signal add_discard
+
 @export var starting_health: int = 20
 @export var starting_armor: int = 0
 
@@ -40,6 +42,18 @@ func take_damage(amount: int):
 
 func add_health(amount: int):
 	health += amount
+
+func add_card_from_deck(amount: int):
+	for i in range(amount):
+		var type = "add"
+		add_discard.emit(type)
+
+func dont_attack():
+	pass
+
+func discart_random_card():
+	var type = "discard"
+	add_discard.emit(type)
 
 func start_turn():
 	armor = 0 #definicao temporaria

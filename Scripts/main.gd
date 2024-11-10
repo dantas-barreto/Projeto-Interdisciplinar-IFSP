@@ -72,6 +72,16 @@ func _process(delta: float) -> void:
 		
 		enemy_state = rng.randi_range(0, 9)
 		game_control.transition(GameController.GameState.PLAYER_TURN)
+		if(!deck_ui.is_empty()):
+			var card_with_id = deck_ui.draw()
+			deck_in_hand.add_card(card_with_id)
+		for structure in deck_in_hand.table.structures:
+			structure.activate({
+			"caster": $MainScreen/PlayerCharacter,
+			"your_monster":deck_in_hand.table.table,
+			"targets": $MainScreen/EnemyCharacter,
+			"enemy": $MainScreen/EnemyCharacter
+			})
 		$MainScreen/PlayerCharacter.start_turn()
 	
 	if game_control.current_state == GameController.GameState.VICTORY:
@@ -93,17 +103,36 @@ func _on_player_table_card_activated(card: UsableCard) -> void:
 	if game_control.current_state == GameController.GameState.PLAYER_TURN:
 		card.activate({
 		"caster": $MainScreen/PlayerCharacter,
-		"targets": $MainScreen/EnemyCharacter
+		"your_monster":deck_in_hand.table.table,
+		"targets": $MainScreen/EnemyCharacter,
+		"enemy": $MainScreen/EnemyCharacter
+	})
+	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
+		card.activate({
+		"caster": $MainScreen/EnemyCharacter,
+		"your_monster":deck_in_hand.table.table,
+		"targets": $MainScreen/PlayerCharacter,
+		"enemy": $MainScreen/EnemyCharacter
 	})
 
 func _on_player_deck_in_hand_card_activated(card: UsableCard) -> void:
 	var card_cost: int = card.get_cost()
-	if card_cost <= $MainScreen/PlayerCharacter.health:
-		card.activate({
-		"caster": $MainScreen/PlayerCharacter,
-		"targets": $MainScreen/EnemyCharacter
-		})
-		card.queue_free()
+	if game_control.current_state == GameController.GameState.PLAYER_TURN:
+		if card_cost <= $MainScreen/PlayerCharacter.health:
+			card.activate({
+			"caster": $MainScreen/PlayerCharacter,
+			"your_monster":deck_in_hand.table.table,
+			"targets": $MainScreen/EnemyCharacter,
+			"enemy": $MainScreen/EnemyCharacter
+			})
+	elif game_control.current_state == GameController.GameState.ENEMY_TURN:
+		if card_cost <= $MainScreen/EnemyCharacter.health:
+			card.activate({
+			"caster": $MainScreen/EnemyCharacter,
+			"your_monster":deck_in_hand.table.table,
+			"targets": $MainScreen/PlayerCharacter,
+			"enemy": $MainScreen/PlayerCharacter
+			})
 
 func _on_enemy_table_card_activated(card: UsableCard) -> void:
 	var card_cost: int = card.get_cost()
@@ -139,8 +168,28 @@ func _on_playable_deck_ui_pressed() -> void:
 		deck_in_hand.add_card(card_with_id)
 	pass
 
+
+func _on_começar_pressed() -> void:
+	$"CanvasLayer/tela de começo".visible = false
+	deck_in_hand.start()
+	for i in range(5):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
+
+
 func _on_deck_in_hand_starting() -> void:
 	deck_ui.deck = player_deck.get_playable_deck()
+	for i in range(5):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
+
+
+func _on_player_character_add_discard(type) -> void:
+	if(type == "add"):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
+	else:
+		deck_in_hand.removeRandomCard()
 
 func _on_start_button_pressed() -> void:
 	$"CanvasLayer/StartScreen".visible = false

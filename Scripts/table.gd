@@ -12,6 +12,7 @@ signal table_card_activated(card: UsableCard)
 @onready var collision_shape: CollisionShape2D = $DebugShape
 
 var table: Array = []
+var structures: Array = []
 var touched: Array = []
 var current_selected_card_index: int = -1
 
@@ -21,6 +22,10 @@ func add_card(card: Node2D):
 	card.mouse_entered.connect(_handle_card_touched)
 	card.mouse_exited.connect(_handle_card_untouched)
 	reposition_cards()
+
+func add_strcture(card: Node2D):
+	structures.push_back(card)
+	add_child(card)
 
 func remove_card(index: int):
 	var removing_card = table[index]

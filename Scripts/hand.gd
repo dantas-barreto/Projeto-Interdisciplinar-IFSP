@@ -72,7 +72,8 @@ func _input(event):
 func _process(delta):
 	for card in hand:
 		current_selected_card_index = -1
-		card.unhighlight()
+		if (card != null):
+			card.unhighlight()
 
 	if !touched.is_empty():
 		var highest_touched_index: int = -1
@@ -80,7 +81,7 @@ func _process(delta):
 		for touched_card in touched:
 			highest_touched_index = max(highest_touched_index, hand.find(touched_card))
 		
-		if highest_touched_index >= 0 && highest_touched_index < hand.size():
+		if highest_touched_index >= 0 && highest_touched_index < hand.size() && hand[highest_touched_index] != null:
 			hand[highest_touched_index].highlight()
 			current_selected_card_index = highest_touched_index
 	
