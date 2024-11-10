@@ -10,10 +10,9 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_erpos")
 action = NodePath("RevivifyAction")
 
-[node name="Card" parent="." node_paths=PackedStringArray("card_image") instance=ExtResource("2_poy5a")]
+[node name="Card" parent="." instance=ExtResource("2_poy5a")]
 card_name = "Revivify Godot"
 card_description = "Health +2"
-card_image = NodePath("../CardSprite")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -40)
