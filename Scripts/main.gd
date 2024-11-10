@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 			$MainScreen/EnemyCharacter.spend_health(3)
 			$MainScreen/PlayerCharacter.take_damage(3)
 		if enemy_state == 1:
-			$MainScreen/EnemyCharacter.spend_heath(3)
+			$MainScreen/EnemyCharacter.spend_health(3)
 			$MainScreen/EnemyCharacter.add_armor(3)
 		if enemy_state == 2:
 			$MainScreen/EnemyCharacter.spend_health(3)
@@ -74,6 +74,9 @@ func _process(delta: float) -> void:
 		
 		enemy_state = rng.randi_range(0, 9)
 		game_control.transition(GameController.GameState.PLAYER_TURN)
+		if(!deck_ui.is_empty()):
+			var card_with_id = deck_ui.draw()
+			deck_in_hand.add_card(card_with_id)
 		$MainScreen/PlayerCharacter.start_turn()
 	
 	if game_control.current_state == GameController.GameState.VICTORY:
@@ -134,7 +137,18 @@ func _on_playable_deck_ui_pressed() -> void:
 func _on_começar_pressed() -> void:
 	$"CanvasLayer/tela de começo".visible = false
 	deck_in_hand.start()
+	for i in range(5):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
 
 
 func _on_deck_in_hand_starting() -> void:
 	deck_ui.deck = player_deck.get_playable_deck()
+
+
+func _on_player_character_add_discard(type) -> void:
+	if(type == "add"):
+		var card_with_id = deck_ui.draw()
+		deck_in_hand.add_card(card_with_id)
+	else:
+		deck_in_hand.removeRandomCard()

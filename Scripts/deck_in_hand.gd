@@ -45,10 +45,13 @@ func _process(delta):
 	pass
 
 func add_card(card_with_id: CardWithID):
-	$Hand.add_card(card_with_id.card)
+	hand.add_card(card_with_id.card)
 
 func reset():
-	$Hand.empty_hand()
+	hand.empty_hand()
+
+func removeRandomCard():
+	hand.remove_card(randi_range(0,hand.hand.size()))
 
 func start():
 	for i in range(3): 
