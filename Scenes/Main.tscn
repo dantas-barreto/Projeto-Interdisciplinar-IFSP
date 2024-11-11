@@ -9,9 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://c1ptdhrdpy5r" path="res://Sprites/cards/arena.jpg" id="4_42njd"]
 [ext_resource type="PackedScene" uid="uid://cq2gw777i7o0q" path="res://Scenes/ui/PlayableDeckUI.tscn" id="6_gb1vt"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("player_character")]
+[node name="Main" type="Node2D" node_paths=PackedStringArray("player_character", "enemy_character")]
 script = ExtResource("1_1kloo")
 player_character = NodePath("MainScreen/PlayerCharacter")
+enemy_character = NodePath("MainScreen/EnemyCharacter")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
